@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+      <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <title>Progrescv Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+      margin: 0;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .header-left {
+      padding: 20px 50px;
+      color: #fff;
+      background-color: #000;
+    }
+
+    .header-right {
+      font-size: 14px;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    .header-right p {
+      margin: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-right i {
+      color: black;
+      margin: 3px;
+      font-size: 15px;
+      border: 1px solid black;
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    .header-left h1 {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 1.5px;
+    }
+
+    .header-left p {
+      margin: 4px 0 0;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    hr {
+      border: none;
+      border-bottom: 1px solid #000;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .about,
+    .experience,
+    .education {
+      display: flex;
+    }
+
+    .about h2 {
+      width: 300px;
+      margin-left: 50px;
+    }
+
+    .about p {
+      margin-left: 100px;
+      margin-right: 30px;
+      line-height: 1.6;
+    }
+
+    .experience h2 {
+      width: 250px;
+      margin-left: 50px;
+    }
+
+    .experience .both {
+      margin-left: 60px;
+      margin-right: 30px;
+    }
+
+    .experience .job {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .education h2 {
+      width: 190px;
+      margin-left: 50px;
+    }
+
+    .education .three {
+      margin-left: 50px;
+      margin-right: 30px;
+    }
+
+    .education .edu-item {
+      display: flex;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .edu-left {
+      width: 150px;
+      font-weight: 700;
+    }
+
+    .edu-left em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-bottom: 20px;
+    }
+
+    .language p {
+      display: inline-block;
+      margin: 10px 0;
+      font-weight: 600;
+    }
+
+    .bar {
+      width: 100px;
+      height: 8px;
+      background: #ccc;
+      display: inline-block;
+      cursor: pointer;
+      margin-left: 10px;
+      vertical-align: middle;
+      position: relative;
+    }
+
+    .fill {
+      height: 8px;
+      background-color: black;
+    }
+
+    .fill.spanish {
+      width: 70%;
+    }
+
+    .fill.english {
+      width: 90%;
+    }
+
+    .fill.japanese {
+      width: 60%;
+    }
+
+    .fill.korean {
+      width: 100%;
+    }
+
+    .expertise ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .expertise li {
+      line-height: 1.6;
+      margin: 6px 0;
+    }
+
+    .reference p {
+      line-height: 1.6;
+      margin: 6px 0;
+    }
+
+    .reference strong {
+      font-weight: 700;
+    }
+
+    [contenteditable="true"]:focus {
+      outline: 2px solid #4caf50;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin: 30px;
+    }
+
+    button {
+      background-color: #000;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .bottom-section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="resume" class="container">
+    <header class="header">
+      <div class="header-left">
+        <h1 contenteditable="true">MORGAN MAXWELL</h1>
+        <p contenteditable="true">MARKETING MANAGER</p>
+      </div>
+      <div contenteditable="true" class="header-right">
+        <p><i class="fa-solid fa-phone"></i> +123-456-7890</p>
+        <p><i class="fa-solid fa-envelope"></i> hello@reallygreatsite.com</p>
+        <p><i class="fa-solid fa-location-dot"></i> 123 Anywhere St., Any City</p>
+      </div>
+    </header>
+
+    <hr />
+
+    <section class="about" contenteditable="true">
+      <h2>ABOUT ME</h2>
+      <p>
+        Lorem ipsum dolor sit amet, bonorum pertinax patrioque et pri, ea pri
+        audire molestie ponderum, ei eripuit habemus delicatissimi eum.
+      </p>
+    </section>
+
+    <hr />
+
+    <section class="experience" contenteditable="true">
+      <h2>EXPERIENCE</h2>
+      <div class="both">
+        <div class="job">
+          <h3>Company Name 2017 - 2020</h3>
+          <p><em>Job Position</em></p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="job">
+          <h3>Company Name 2020 - 2021</h3>
+          <p><em>Job Position</em></p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="education" contenteditable="true">
+      <h2>EDUCATION</h2>
+      <div class="three">
+        <div class="edu-item">
+          <div class="edu-left">
+            <p>
+              <strong>2015</strong><br /><em>University Name</em><br /><strong
+                >Your Degree</strong
+              >
+            </p>
+          </div>
+          <div class="edu-right">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+         <div class="edu-item">
+          <div class="edu-left">
+            <p>
+              <strong>2015</strong><br /><em>University Name</em><br /><strong
+                >Your Degree</strong
+              >
+            </p>
+          </div>
+          <div class="edu-right">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+         <div class="edu-item">
+          <div class="edu-left">
+            <p>
+              <strong>2015</strong><br /><em>University Name</em><br /><strong
+                >Your Degree</strong
+              >
+            </p>
+          </div>
+          <div class="edu-right">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="bottom-section" contenteditable="true">
+      <div class="language">
+        <h3>LANGUAGE</h3>
+        <p>Spanish <div class="bar"><div class="fill spanish"></div></div></p> <br>
+        <p>English <div class="bar"><div class="fill english"></div></div></p> <br>
+        <p>Japanese <div class="bar"><div class="fill japanese"></div></div></p><br>
+        <p>Korean <div class="bar"><div class="fill korean"></div></div></p><br>
+      </div>
+      <div class="expertise">
+        <h3>EXPERTISE</h3>
+        <ul>
+          <li>ui/ux</li>
+          <li>visual design</li>
+          <li>leadership</li>
+          <li>coaching</li>
+        </ul>
+      </div>
+      <div class="reference">
+        <h3>REFERENCE</h3>
+        <p>
+          <strong>Lorna Alvarado</strong><br />Company Name/Position
+        </p>
+        <p><strong>Phone</strong><br />+123-456-7890</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="btn-container">
+    <button onclick="downloadPDF()">Download PDF</button>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("resume");
+
+      const opt = {
+        margin: [0, 0, 0, 0],
+        filename: "My_Resume.pdf",
+        image: { type: "jpeg", quality: 1 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          scrollY: 0,
+        },
+        jsPDF: {
+          unit: "px",
+          format: [element.offsetWidth, element.offsetHeight],
+          orientation: "portrait",
+        },
+      };
+
+      html2pdf().set(opt).from(element).save();
+    }
+    document.querySelectorAll('.bar').forEach(bar => {
+  bar.addEventListener('click', function() {
+    const fill = this.querySelector('.fill');
+    let currentWidth = parseInt(fill.style.width) || 0;
+    let newWidth = (currentWidth + 10) % 110; 
+    fill.style.width = newWidth + '%';
+  });
+});
+  </script>
+</body>
+</html>

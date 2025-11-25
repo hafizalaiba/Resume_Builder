@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <title>Progrescv Cover Letter</title>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 40px;
+        background-color: #ccc;
+        font-family: "Montserrat", sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 880px;
+        background: white;
+        display: flex;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      /* Sidebar - dark panel */
+      .sidebar {
+        width: 280px;
+        background-color: #282f3b;
+        color: #c5b076;
+        padding: 50px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Profile picture */
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 35px;
+        cursor: pointer;
+        margin-top: 30px;
+        border: 5px solid #394654;
+        box-shadow: 0 0 15px rgba(197, 176, 118, 0.6);
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .main-header small {
+        font-weight: 300;
+        font-size: 14px;
+        margin-top: 4px;
+        display: block;
+        color: #f7f5f0;
+      }
+
+      .sidebar-header strong {
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
+
+      /* Contact info section */
+      .contact-info {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 35px;
+      }
+
+      .contact-info h4 {
+        font-weight: 600;
+        font-size: 15px;
+        margin-bottom: 15px;
+        color: #ab9e53;
+      }
+
+      .contact-item {
+        margin-bottom: 12px;
+      }
+
+      .contact-item span {
+        display: block;
+      }
+
+      /* Cover Name section */
+      .cover-name {
+        width: 100%;
+      }
+
+      .cover-name h4 {
+        font-weight: 600;
+        font-size: 15px;
+        margin-bottom: 14px;
+        color: #ab9e53;
+      }
+
+      .cover-name ol {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #c5b076;
+      }
+
+      .cover-name ol li {
+        margin-bottom: 7px;
+      }
+
+      /* Main content */
+      .main-content {
+        flex: 1;
+        padding: 40px 50px;
+        color: #333333;
+      }
+
+      /* Orange header top on right panel */
+      .main-header {
+        width: 100%;
+        padding: 35px 100px;
+        background-color: #de9d18;
+        color: #16191f;
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: 1px;
+        user-select: none;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+      .contact-item .icon {
+        display: inline-block;
+        color: #ab9e53;
+        margin-right: 5px;
+      }
+
+      .name-small {
+        font-size: 15px;
+        font-weight: 300;
+        margin-top: 6px;
+      }
+
+      /* Company name */
+      .company-name {
+        font-weight: 600;
+        font-size: 17px;
+        margin-bottom: 22px;
+      }
+
+      /* Letter body */
+      .letter-text {
+        font-size: 13px;
+        line-height: 1.7;
+        white-space: pre-wrap;
+      }
+      .letter-text h1 {
+        margin-left: 30px;
+      }
+      /* Signature */
+      .signature-section {
+        margin-top: 40px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #ab9e53;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .signature-section .signature {
+        font-family: "Pacifico", cursive;
+        font-size: 28px;
+        font-weight: 400;
+        color: #de9d18;
+        margin-top: 6px;
+        user-select: none;
+      }
+      button {
+        height: 50px;
+        background: #de9d18;
+        color: #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 30px;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+          width: 95%;
+        }
+        .sidebar {
+          width: 100%;
+          padding: 30px;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .cover-name {
+          width: 100%;
+          margin-top: 20px;
+        }
+        .main-content {
+          padding: 20px;
+        }
+        .main-header {
+          font-size: 26px;
+          padding: 25px 20px;
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .profile-pic {
+          width: 100px;
+          height: 100px;
+          margin: 20px 0 25px;
+        }
+        .main-header {
+          font-size: 22px;
+          padding: 20px 15px;
+          margin-bottom: 20px;
+        }
+        .letter-text {
+          font-size: 12px;
+        }
+        .signature {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      contenteditable="true"
+      id="contentToPrint"
+      class="container"
+      role="main"
+      aria-label="Cover letter document"
+    >
+      <aside class="sidebar" aria-label="Profile and contact information">
+        <div
+          class="profile-pic"
+          onclick="document.getElementById('fileInput').click()"
+        >
+          <img
+            id="profilePic"
+            src="https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ym95fGVufDB8fDB8fHww"
+            alt="Profile Picture"
+          />
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+        </div>
+
+        <div class="sidebar-header" role="banner" aria-label="Profile header">
+          <!-- <small>Profile</small>
+          <strong>COVER LETTER</strong>
+          <small>Mattn Mill Darian<br />Salt loure</small> -->
+        </div>
+
+        <div class="contact-info" aria-label="Contact business information">
+          <h4>Peacfartley</h4>
+          <div class="contact-item">
+            <span><strong>Contantt Business</strong></span
+            >7-60 210, Name<br />1000 MANG
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone icon"></i> (C) 93 89, 9037
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope icon"></i> (6399) Salmges
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-globe icon"></i> BFA101 378
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-mail-bulk icon"></i> PolconGaning.com
+          </div>
+
+          <div class="contact-item">
+            <strong>Contact Details</strong><br />Proje: NO 649 / 401 52223,
+            cori
+          </div>
+        </div>
+
+        <div class="cover-name" aria-label="Cover name list">
+          <h4>Cover Name</h4>
+          <ol>
+            <li>Nati Primerd</li>
+            <li>Mannd Aprorrimes</li>
+            <li>Taskuleyt Plajwo</li>
+            <li>Leve Mediret</li>
+            <li>Frgihify Cinvel</li>
+            <li>Settletyes</li>
+          </ol>
+        </div>
+      </aside>
+
+      <main class="main-content" role="main" aria-label="Letter content">
+        <header class="main-header" aria-level="1" role="heading">
+          <small>Profile</small>
+          <strong>COVER LETTER</strong>
+          <small>Mattn Mill Darian<br />Salt loure</small>
+        </header>
+        <div class="letter-text" tabindex="0" aria-label="Cover letter body">
+          <h1>Prathaot Business</h1>
+          An cuwdhltp veland uilitcr nenes pesgen nare ao clu'chere podalce
+          naptiniet ofora an puliesuntic egenvuss bosting conhesver wraul eutm
+          opolte condmo olopit loisaasne. conenret tre pescraning bewesthing d
+          foint mute to tlep heforeomat has are annot year posltice. You user
+          sdo pernlryyesnenne efleaetv resturt o clectal leoon ater. Tin dnbsnss
+          of katiie yur our tllewind ocoelnutts adenigneau, and satioo web pro
+          peyuate onllen of and mmetet oohlv th reoljgoot; awsrrtication ao
+          piort expenun nour suir esooponte prodle dler your sonelve ans dous
+          poule toek pranaess wmee to pon or stemi, you teot moving steetre
+          opivule on your rounoone and arentistont of letor portioers will due
+          coments netstre cotent ampliciers wetter Wat soduluenoter ser tos
+          intrichadet. We bengludete conntempaetle pisten treat an lawater
+          escoraply ntom They ooes at a conntoere a puealti: you ret vatent
+          terpibcan cotennt rare Vet all dawes or amzan oan anginuts oeefance &
+          meed eranetextetant for becooe resseats eiln Cower tnade nece, be sert
+          and aoninhdur consate polly tare can are man. feechmeet. andisard
+          asipne. eheaw the lestsn t nuqrily tochet. We with horsecquommeers and
+          usembonent actus in reocases sicce for an ohtmnanilly ao lorfest willy
+          witness very aet en te tine. venorul to toora etleneat. Wilt acpele is
+          amo me.ty slane yuir onsop perficct. TO CO in and connss tegiort foal
+          hat all whmert. act at tran ona, lear cetoutlilies an conumntteder
+          pomiben ses., tt campd magnitns curcems. Ctlaneb to your tomdlot
+          artrdrand atre ptg oitne poenrac amte rat etrd nd holling and manees
+          your woteme tt idocs an anting pian your fene asar adulte
+          youplemterec.
+        </div>
+        <section aria-label="Signature" class="signature-section">
+          Presrialet:<br />
+          <span class="signature">A. M. johnson</span>
+        </section>
+      </main>
+    </div>
+    <button id="downloadBtn">Download PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      const btn = document.getElementById("downloadBtn");
+      const content = document.getElementById("contentToPrint");
+
+      btn.addEventListener("click", () => {
+        html2canvas(content, {
+          scale: 2,
+          useCORS: true,
+          scrollY: -window.scrollY,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelector(".profile-pic").style.overflow = "hidden";
+            clonedDoc.querySelector(".profile-pic").style.borderRadius = "50%";
+          },
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [canvas.width, canvas.height],
+          });
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          pdf.save("cover-letter.pdf");
+        });
+      });
+    </script>
+  </body>
+</html>

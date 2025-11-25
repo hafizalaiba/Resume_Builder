@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <title>Progrescv Resume</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+        color: #000;
+        line-height: 1.6;
+        background: #fff;
+      }
+      .container {
+        border: 2px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .left-column {
+        width: 62%;
+      }
+
+      .right-column {
+        width: 35%;
+      }
+
+      /* Header Name & Title */
+      .left-column h1 {
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .left-column h2 {
+        font-weight: 400;
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+
+      .summary {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 32px;
+        color: #333;
+      }
+
+      /* Section Titles */
+      h3 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #000;
+      }
+
+      .job-title {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 13px;
+      }
+
+      .job-date {
+        font-weight: 400;
+        font-size: 13px;
+      }
+
+      /* Job location */
+      .job-location {
+        font-size: 12px;
+        margin-bottom: 8px;
+        font-style: italic;
+      }
+
+      /* Lists */
+      ul {
+        list-style: disc inside;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #222;
+      }
+
+      .skills {
+        columns: 2;
+        list-style: disc inside;
+      }
+
+      /* Right Column Text */
+      .right-column {
+        font-size: 13px;
+        color: #111;
+      }
+
+      .contact {
+        margin-bottom: 40px;
+        margin-top: 120px;
+      }
+
+      .contact div {
+        margin-bottom: 6px;
+      }
+
+      .education-item,
+      .certification,
+      .association {
+        margin-bottom: 24px;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+      [contenteditable="true"] {
+        padding: 2px 0;
+        min-width: 20px;
+        display: inline-block;
+      }
+
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+        background-color: #f0fff0;
+      }
+      .btn-container {
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 30px;
+      }
+      .btn-container button {
+        background-color: black;
+        color: #fff;
+        padding: 10px 50px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+     
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .contact {
+    margin-top: 40px;
+  }
+
+  .skills {
+    columns: 1;
+  }
+
+  .btn-container {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .btn-container button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    border: none;
+  }
+
+  .left-column h1 {
+    font-size: 24px;
+  }
+
+  .left-column h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .summary {
+    font-size: 13px;
+  }
+
+  h3 {
+    font-size: 13px;
+  }
+
+  ul {
+    font-size: 13px;
+  }
+
+  .job-title {
+    font-size: 12px;
+  }
+
+  .job-date {
+    font-size: 12px;
+  }
+
+  .job-location {
+    font-size: 11px;
+  }
+
+  .skills {
+    columns: 1;
+  }
+
+  .right-column {
+    font-size: 12px;
+  }
+
+  .contact {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-column h1 {
+    font-size: 22px;
+  }
+
+  .left-column h2 {
+    font-size: 16px;
+  }
+
+  .summary {
+    font-size: 12px;
+  }
+
+  ul {
+    font-size: 12px;
+  }
+
+  .right-column {
+    font-size: 11px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .btn-container button {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="resume" class="container">
+      <div class="left-column">
+        <h1 contenteditable="true">Olivia Wilson</h1>
+        <h2 contenteditable="true">Product Manager, Content Data</h2>
+
+        <p contenteditable="true" class="summary">
+          Innovative and results-driven Product Manager with seven years of
+          experience in the tech industry, specialising in Content Data. Proven
+          track record in launching and scaling B2B2C and B2B technical
+          products. Expertise in data platforms, experiences, tools, workflows,
+          and infrastructure. Adept at leading cross-functional teams to deliver
+          high-impact products that drive business growth and enhance data
+          quality and governance.
+        </p>
+
+        <h3 contenteditable="true">PROFESSIONAL EXPERIENCE</h3>
+        <div class="job">
+          <div class="job-title">
+            <strong contenteditable="true"
+              >Senior Product Manager, Data Solutions</strong
+            >
+            <span contenteditable="true" class="job-date"
+              >June 2019 - Present</span
+            >
+          </div>
+          <div class="job-location" contenteditable="true">
+            Ingoude Company, 123 Anywhere St., Any City
+          </div>
+          <ul contenteditable="true">
+            <li>
+              Led the successful development of a flagship enterprise
+              application, enhancing data quality and governance for over 50
+              global clients.
+            </li>
+            <li>
+              Defined and operationalised technology solutions focusing on
+              metadata governance, taxonomy management, and data policy
+              enforcement.
+            </li>
+            <li>
+              Worked together with designers, engineer, and business partners to
+              turn plans into effective product roadmaps.
+            </li>
+            <li>
+              Managed the complete product lifecycle, consistently delivering
+              projects on time and within budget.
+            </li>
+          </ul>
+        </div>
+
+        <div contenteditable="true" class="job">
+          <div class="job-title">
+            <strong>Product Manager, Enterprise Applications</strong>
+            <span class="job-date">July 2016 - May 2019</span>
+          </div>
+          <div class="job-location">Borcelle, 123 Anywhere St., Any City</div>
+          <ul>
+            <li>
+              Spearheaded the design and launch of a data management platform,
+              resulting in a 40% increase in efficiency for data processing
+              tasks.
+            </li>
+            <li>
+              Conducted market analysis to identify new opportunities, leading
+              to the development of two new product features adopted by over 70%
+              of clients.
+            </li>
+            <li>
+              Coordinated with cross-functional teams to ensure alignment of
+              product vision with business objectives and customer needs.
+            </li>
+          </ul>
+        </div>
+
+        <div contenteditable="true" class="job">
+          <div class="job-title">
+            <strong>Associate Product Manager</strong>
+            <span class="job-date">August 2015 - June 2016</span>
+          </div>
+          <div class="job-location">Borcelle, 123 Anywhere St., Any City</div>
+          <ul>
+            <li>
+              Assisted in managing product lifecycles for data-centric
+              applications, contributing to a 20% improvement in product
+              performance.
+            </li>
+            <li>
+              Played a crucial role in market research and competitive analysis,
+              aiding in strategic decision-making for product enhancements.
+            </li>
+          </ul>
+        </div>
+
+        <div contenteditable="true" class="job">
+          <div class="job-title">
+            <strong>Intern, Content and Business Products Team</strong>
+            <span class="job-date">June 2015 - August 2015</span>
+          </div>
+          <div class="job-location">Borcelle, 123 Anywhere St., Any City</div>
+        </div>
+        <br />
+
+        <h3 contenteditable="true">SKILLS</h3>
+        <br />
+        <ul contenteditable="true" class="skills">
+          <li>Product Lifecycle Management</li>
+          <li>Data Quality & Governance</li>
+          <li>Cross-Functional Leadership</li>
+          <li>Strategic Planning & Analysis</li>
+          <li>Agile & Scrum Methodologies</li>
+          <li>Stakeholder Engagement</li>
+        </ul>
+      </div>
+
+      <div class="right-column">
+        <div contenteditable="true" class="contact">
+          <div>+123-456-7890</div>
+          <div>hello@reallygreatsite.com</div>
+          <div>@reallygreatsite</div>
+        </div>
+        <br />
+
+        <h3 contenteditable="true">EDUCATION</h3>
+        <br />
+        <div contenteditable="true" class="education-item">
+          <strong
+            >Master of Business Administration (MBA), Technology
+            Management</strong
+          ><br />
+          Warner & Spencer<br />
+          2013 - 2015
+        </div>
+        <div contenteditable="true" class="education-item">
+          <strong>Bachelor of Science in Computer Science</strong><br />
+          Ginyard International Co.<br />
+          2009 - 2013
+        </div>
+        <br />
+        <h3 contenteditable="true">CERTIFICATIONS</h3>
+        <div contenteditable="true" class="certification">
+          <strong>Advanced Digital Product Strategist (ADPS)</strong><br />
+          Global Institute of Product & Technology Management (GIPTM)
+        </div>
+        <div contenteditable="true" class="certification">
+          <strong>Certified Agile Product Leader (CAPL)</strong><br />
+          Issuing Organisation: International Agile Development Association
+          (IADA)
+        </div>
+        <br />
+        <h3 contenteditable="true">PROFESSIONAL ASSOCIATIONS</h3>
+        <div contenteditable="true" class="association">
+          Member, International Alliance of Product Innovation (IAPI)
+        </div>
+        <div contenteditable="true" class="association">
+          Member, Society for Data Leadership and Empowerment (SDLE)
+        </div>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById("resume");
+
+        window.scrollTo(0, 0);
+
+        const opt = {
+          margin: [0, 0, 0, 0], 
+          filename: "My_Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0, 
+            windowWidth: document.body.scrollWidth, 
+          },
+          jsPDF: {
+            unit: "px",
+            format: [
+              document.getElementById("resume").offsetWidth,
+              document.getElementById("resume").offsetHeight,
+            ],
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
+      }
+    </script>
+  </body>
+</html>

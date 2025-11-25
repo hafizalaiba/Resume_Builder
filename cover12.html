@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Progrescv Cover Letter</title>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=PT+Serif&family=Work+Sans&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 40px;
+        background: #658292;
+        font-family: "Work Sans", sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 794px;
+        background: white;
+        display: flex;
+        box-shadow: 0 16px 25px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* Sidebar left */
+      .sidebar {
+        background-color: #c9c7bc;
+        width: 240px;
+        padding: 50px 40px 50px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #5c5b56;
+        position: relative;
+      }
+
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 4px solid #64787c;
+        overflow: hidden;
+        margin-bottom: 60px;
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .sidebar-list {
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 80px 0;
+      }
+
+      .sidebar-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 1.3;
+        gap: 12px;
+      }
+
+      .sidebar-list li svg {
+        width: 18px;
+        height: 18px;
+        fill: #5c5b56;
+        flex-shrink: 0;
+      }
+
+      .social-icons {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons svg {
+        width: 22px;
+        height: 22px;
+        fill: #5c5b56;
+        cursor: pointer;
+      }
+
+      /* Main content right */
+      .main-content {
+        flex-grow: 1;
+        padding: 55px 70px;
+        color: #393d40;
+      }
+
+      .subtext {
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+        margin-bottom: 6px;
+      }
+
+      h1 {
+        font-family: "PT Serif", serif;
+        font-size: 36px;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+        border-bottom: 1px solid #999;
+        padding-bottom: 6px;
+      }
+
+      h2 {
+        font-weight: 300;
+        font-size: 15px;
+        margin: 0 0 45px 0;
+      }
+
+      .contact-info {
+        font-family: "PT Serif", serif;
+        font-weight: 300;
+        font-size: 15px;
+        margin-bottom: 38px;
+      }
+
+      .letter-text {
+        font-family: "PT Serif", serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .letter-signature {
+        margin-top: 45px;
+        font-family: "PT Serif", serif;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 17px;
+      }
+
+      .footer-web {
+        margin-top: 80px;
+        font-size: 13px;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 400;
+      }
+
+      button {
+        height: 50px;
+        background: #c9c7bc;
+        color: #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 30px;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+      @media (max-width: 1024px) {
+  body {
+    padding: 20px;
+  }
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column; /* Sidebar upar aa jayegi */
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 40px 30px;
+    align-items: center;
+  }
+
+  .sidebar-list li {
+    justify-content: center;
+  }
+
+  .main-content {
+    padding: 40px 35px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .subtext,
+  h2,
+  .contact-info,
+  .letter-signature,
+  .footer-web {
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  .letter-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .main-content {
+    padding: 25px;
+  }
+
+  body {
+    padding: 10px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" id="contentToPrint" class="container">
+      <aside class="sidebar" aria-label="Profile and contact info">
+        <div
+          class="profile-pic"
+          onclick="document.getElementById('fileInput').click()"
+        >
+          <img
+            id="profilePic"
+            src="https://images.unsplash.com/photo-1596392927852-2a18c336fb78?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Profile Picture"
+          />
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+        </div>
+
+        <ul class="sidebar-list">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 
+             2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72 
+             12.44 12.44 0 0 0 .7 2.81 
+             2 2 0 0 1-.45 2.11L9.12 11a16 16 0 0 0 6.88 6.88l1.36-1.36
+             a2 2 0 0 1 2.11-.45 12.44 12.44 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+
+            <span><strong>Phone</strong> Tazy ond</span>
+          </li>
+
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect
+                x="2"
+                y="7"
+                width="20"
+                height="10"
+                rx="2"
+                ry="2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M2 7l10 6 10-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+            <span><strong>Hoppe Mine</strong> Covey Mont</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M12 8v4l3 3"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+            <span><strong>Ressry Uliters</strong> Penyrym Cavittgo</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4 4h16v16H4z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M9 8h6v8H9z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+            <span><strong>Celart Desals</strong> Certa, Nowdau</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 22v-3M9 15v7h6v-7"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M4 15v-1h16v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+            <span><strong>Resary Retalts</strong> Powersrol Nasioon</span>
+          </li>
+        </ul>
+
+      
+        <div class="colored"></div>
+      </aside>
+
+      <section class="main-content">
+        <p class="subtext">HERU MARE</p>
+        <h1>Cover Letter</h1>
+        <h2>DIALER FANU + ESCONES<br />Professionard</h2>
+
+        <div class="contact-info">
+          <p><em>Iavotone</em></p>
+          <p>1756 2544-5503<br />Mext, £2300</p>
+        </div>
+
+        <div class="letter-text" >
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem
+            optio perspiciatis minima animi amet ab vitae soluta porro
+            perferendis aliquam saepe doloremque quisquam, aliquid ipsa veniam
+            doloribus, totam incidunt, quasi veritatis laboriosam asperiores?
+            Nulla hic optio eius voluptatum. Temporibus distinctio molestiae
+            ipsum impedit aspernatur dolore error consectetur esse rerum.
+            Nesciunt nobis ullam voluptatibus earum dolor molestiae et
+            consequuntur minus corporis eaque, rerum reprehenderit nemo!
+            Voluptatem, aliquam. Aut quis, unde porro consequatur dolor quae
+            delectus facilis, vero autem sed nam modi commodi aliquam adipisci
+            assumenda at dignissimos eum nihil harum inventore fugiat nostrum
+            blanditiis cum. Sint aliquam eligendi facere impedit excepturi iure
+            sunt modi eaque repudiandae odit. Maiores praesentium facere
+            recusandae saepe ducimus! Hic rem, provident recusandae, vero
+            consectetur aut harum animi unde officiis reiciendis corporis.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Perferendis, libero, optio dolorum iste dolore explicabo cumque
+            error quod ad, non sequi! Aliquid eveniet nostrum accusamus
+            pariatur! Dolorum qui, consequuntur accusamus repellat sequi optio
+            iusto soluta ad nam explicabo assumenda at libero laborum quis
+            asperiores recusandae magni eum omnis dicta sint!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eius,
+            temporibus amet dolore vero assumenda dolorem? Deserunt ipsum fugit
+            tempore harum autem quae magnam necessitatibus at totam laudantium
+            ipsa aperiam optio, temporibus impedit nobis dolore vero quasi, illo
+            corrupti facere? Cumque nam, doloremque accusamus impedit ipsam,
+            dolor similique ad voluptas mollitia vero asperiores cupiditate
+            ratione, quas repudiandae! Corrupti, doloribus natus!
+          </p>
+        </div>
+
+        <p class="letter-signature">Rese 6ere<br />Cal New</p>
+        <p class="footer-web">Carvegerform.com</p>
+      </section>
+    </div>
+    <button id="downloadBtn">Download PDF</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      const btn = document.getElementById("downloadBtn");
+      const content = document.getElementById("contentToPrint");
+
+      btn.addEventListener("click", () => {
+        html2canvas(content, {
+          scale: 2,
+          useCORS: true,
+          scrollY: -window.scrollY,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelector(".profile-pic").style.overflow = "hidden";
+            clonedDoc.querySelector(".profile-pic").style.borderRadius = "50%";
+          },
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [canvas.width, canvas.height],
+          });
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          pdf.save("cover-letter.pdf");
+        });
+      });
+    </script>
+  </body>
+</html>

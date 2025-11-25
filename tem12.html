@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Progrescv Resume</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, sans-serif;
+        background-color: rgb(10, 10, 10);
+        color: #1e293b;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border-top: 50px solid white;
+        border-bottom: 70px solid white;
+      }
+
+      /* Sidebar */
+      aside.sidebar {
+        background-color: #cfcfcf;
+        width: 280px;
+        color: #1e293b;
+
+        padding: 2rem 2rem 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10px;
+        font-weight: 500;
+        margin-top: 233px;
+        position: relative;
+      }
+
+      .photo-container {
+        width: 200px;
+        height: 200px;
+        background-color: #1e293b;
+        border-radius: 50%;
+        margin-top: -130px;
+        cursor: pointer;
+        overflow: hidden;
+        border: 5px solid white;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Section Titles in sidebar */
+      #skills-heading {
+        margin-left: -53px;
+        width: 200px;
+        margin-right: -30px;
+      }
+
+      #language-heading {
+        margin-left: -40px;
+        width: 200px;
+        margin-right: -30px;
+      }
+      aside.sidebar h3 {
+        width: 100%;
+        color: #1e293b;
+        font-weight: 700;
+        font-size: 1.6rem;
+        padding: 0.3rem 0;
+        margin-bottom: 1.1rem;
+        text-align: left;
+        padding-left: 1rem;
+        letter-spacing: 1px;
+        user-select: none;
+        margin-left: -10px;
+        border-bottom: 1px solid #1e293b;
+      }
+
+      aside.sidebar p,
+      aside.sidebar ul {
+        font-weight: 400;
+        font-size: 0.95rem;
+        width: 100%;
+        margin-bottom: 1.3rem;
+        padding-left: 1rem;
+        word-wrap: break-word;
+      }
+      aside.sidebar i {
+        margin-left: -20px;
+      }
+      aside.sidebar p strong {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+
+      aside.sidebar ul {
+        list-style: disc inside;
+        padding-left: 1rem;
+      }
+
+      aside.sidebar ul li {
+        margin-bottom: 0.7rem;
+        font-weight: 400;
+      }
+      .language-section ul,
+      .skills-section ul {
+        padding-left: 0 !important;
+        margin-left: -20px;
+      }
+      .language-section ul li {
+        margin-left: 0;
+      }
+
+      /* Main Content */
+      main.main-content {
+        flex: 1;
+        padding: 3rem 3rem 3rem 3rem;
+        color: #1e293b;
+        display: flex;
+        flex-direction: column;
+        background: white;
+      }
+
+      /* Name and Title Header with background */
+      main.main-content > header {
+        background-color: #1e293b;
+        padding: 3rem 2rem 3.2rem 2rem;
+        margin: -3rem -3rem 3rem -21.1rem;
+        color: white;
+      }
+
+      main.main-content header h1 {
+        font-size: 2.9rem;
+        font-weight: 1000;
+        letter-spacing: 0.07em;
+        margin-bottom: 0.15rem;
+        margin-left: 400px;
+        line-height: 1.1;
+      }
+
+      main.main-content header h2 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-left: 400px;
+
+        color: #dad7d3;
+      }
+
+      /* Section headings in main content */
+      main.main-content h3 {
+        color: #1e293b;
+        font-weight: 700;
+        padding: 0.55rem 1rem;
+        margin-bottom: 1.4rem;
+        font-size: 1.15rem;
+        letter-spacing: 0.03em;
+        user-select: none;
+        border-bottom: 1px solid #1e293b;
+      }
+
+      /* About me paragraph */
+      .about p {
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 2.4rem;
+        color: #1e293b;
+      }
+
+      /* Work Experience */
+      .work-experience article {
+        margin-bottom: 2.6rem;
+      }
+
+      .work-experience h4 {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #1e293b;
+        margin-bottom: 0.1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .work-experience h4::before {
+        content: "";
+        display: inline-block;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        margin-right: 12px;
+        vertical-align: middle;
+        user-select: none;
+      }
+
+      .work-experience em {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #1e293b;
+        margin-bottom: 1rem;
+        letter-spacing: 0.02em;
+      }
+
+      .work-experience ul {
+        list-style: disc inside;
+        color: #4b4845;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .work-experience ul li {
+        margin-bottom: 0.7rem;
+        padding-left: 0.25rem;
+      }
+
+      /* Education */
+      .education p {
+        margin-bottom: 1.6rem;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #4b4845;
+      }
+
+      .education strong {
+        font-weight: 900;
+        color: #1e293b;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+          border-top-width: 40px;
+          border-bottom-width: 40px;
+        }
+
+        aside.sidebar {
+          width: 100%;
+          margin-left: 0;
+          border-radius: 0;
+        }
+
+        .photo-container {
+          width: 180px;
+          height: 180px;
+        }
+
+        main.main-content > header {
+          margin: 0;
+          text-align: center;
+          padding: 2.5rem 1rem;
+        }
+
+        main.main-content header h1 {
+          font-size: 2.2rem;
+          margin-left: 0;
+        }
+
+        main.main-content header h2 {
+          margin-left: 0;
+          font-size: 0.9rem;
+        }
+
+        main.main-content {
+          padding: 2rem;
+        }
+
+        .btn-container button {
+          margin-left: 0;
+          width: 100%;
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .photo-container {
+          width: 150px;
+          height: 150px;
+        }
+
+        main.main-content header h1 {
+          font-size: 1.8rem;
+        }
+
+        main.main-content header h2 {
+          font-size: 0.8rem;
+        }
+
+        main.main-content h3 {
+          font-size: 1rem;
+        }
+
+        .about p,
+        .work-experience ul li,
+        .education p {
+          font-size: 0.95rem;
+        }
+      }
+
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn-container button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        margin: 20px 0 30px 0;
+      }
+
+      #ref-heading {
+        margin-left: -10px;
+        width: 200px;
+      }
+      #ref-heading p {
+        margin-left: -50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" id="resume" class="container" role="main">
+      <aside
+        class="sidebar"
+        aria-label="Sidebar with contact information and skills"
+      >
+        <div
+          class="photo-container"
+          onclick="document.getElementById('fileInput').click();"
+        >
+          <img
+            id="profilePic"
+            src="https://images.unsplash.com/photo-1547527392-bd5d50305ca0?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Profile photo of Harumi Kobayashi"
+          />
+        </div>
+
+        <section class="contact-section" aria-labelledby="contact-heading">
+          <h3 id="contact-heading">CONTACT</h3>
+          <p><i class="fas fa-phone"></i> +123-456-7890</p>
+          <p><i class="fas fa-envelope"></i> hello@reallygreatsite.com</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Anywhere St., Any City
+          </p>
+        </section>
+
+        <section class="skills-section" aria-labelledby="skills-heading">
+          <h3 id="skills-heading">SKILLS</h3>
+          <ul>
+            <li>Program</li>
+            <li>Marketing</li>
+            <li>Team Work</li>
+            <li>Technology</li>
+            <li>Marketing</li>
+          </ul>
+        </section>
+
+        <section class="language-section" aria-labelledby="language-heading">
+          <h3 id="language-heading">LANGUAGE</h3>
+          <ul>
+            <li>English</li>
+            <li>French</li>
+            <li>Spanish</li>
+            <li>Korean</li>
+          </ul>
+        </section>
+        <section class="ref-section" aria-labelledby="ref-heading">
+          <h3 id="ref-heading">Reference</h3>
+          <p>Eestelle Darcy</p>
+          <p>Wardiere Inc/.CTO</p>
+          <p><strong>Phone:</strong>123-456-789</p>
+          <p><strong>Email:</strong>hello@gmail.com</p>
+        </section>
+      </aside>
+
+      <main class="main-content" tabindex="0">
+        <header>
+          <h1>HARUMI KOBAYASHI</h1>
+          <h2>DIGITAL MARKETING</h2>
+        </header>
+
+        <section class="about" aria-labelledby="about-heading">
+          <h3 id="about-heading">PROFILE</h3>
+          <p>
+            Energetic digital marketing with 5+ years of experience in digital
+            marketing company. Skilled in data processing and documentation
+            analysis. At Liceria &amp; Co. helped to increase work efficiency by
+            10% by implementing a new documentation workflow system.
+          </p>
+        </section>
+
+        <section
+          class="work-experience"
+          aria-labelledby="work-experience-heading"
+        >
+          <h3 id="work-experience-heading">WORK EXPERIENCE</h3>
+
+          <article>
+            <h4>Junior Digital Marketing</h4>
+            <em>June 2030 - Present</em>
+            <ul>
+              <li>
+                Manager oversees company digital marketing to more client in
+                social media.
+              </li>
+              <li>Managing team to handing social media.</li>
+              <li>Product marketing</li>
+              <li>Increated clien and customer.</li>
+            </ul>
+          </article>
+          <article>
+            <h4>Junior Digital Marketing</h4>
+            <em>June 2030 - Present</em>
+            <ul>
+              <li>
+                Manager oversees company digital marketing to more client in
+                social media.
+              </li>
+              <li>Managing team to handing social media.</li>
+              <li>Product marketing</li>
+              <li>Increated clien and customer.</li>
+            </ul>
+          </article>
+
+          <article>
+            <h4>Senior Digital Marketing</h4>
+            <em>September 2023 - Present</em>
+            <ul>
+              <li>Professional class in digital marketing.</li>
+              <li>Creative idea for digital marketing.</li>
+              <li>Organizes of social media post for editorial departemen.</li>
+              <li>Handing social media campaign.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="education" aria-labelledby="education-heading">
+          <h3 id="education-heading">EDUCATION</h3>
+          <p>
+            <strong>Bachelor of Digital Marketing</strong> Bachelor of Digital
+            Marketing And Business
+          </p>
+          <p>
+            <strong>Bachelor of Digital Marketing</strong> Bachelor of Digital
+            Marketing And Business
+          </p>
+        </section>
+      </main>
+    </div>
+    <input
+      type="file"
+      id="fileInput"
+      accept="image/*"
+      style="display: none"
+      onchange="changeProfileImage(event)"
+    />
+
+    <div class="btn-container">
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById("resume");
+        const opt = {
+          margin: [0, 0, 0, 0],
+          filename: "My_Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0,
+          },
+          jsPDF: {
+            unit: "px",
+            format: [element.offsetWidth, element.offsetHeight],
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
+      }
+      document.querySelectorAll(".bar").forEach((bar) => {
+        bar.addEventListener("click", function () {
+          const fill = this.querySelector(".fill");
+          let currentWidth = parseInt(fill.style.width) || 0;
+          let newWidth = (currentWidth + 10) % 110;
+          fill.style.width = newWidth + "%";
+        });
+      });
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      function changeProfileImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

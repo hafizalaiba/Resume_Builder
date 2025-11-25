@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Your CV — ProgresCV</title>
+      <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --primary: #6d2a7a;
+      --accent: #420d2b;
+      --muted: #6b6b6b;
+      --success: #2e7d32;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /*  Navbar */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 16px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .logo img.logo-img {
+      width: 130px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+      font-weight: 500;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .nav-item:hover {
+      color: var(--primary);
+    }
+
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ff7ab6, #6d2a7a);
+      transition: width 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .nav-item:hover::after {
+      width: 100%;
+    }
+ nav a:hover,
+      nav a.active {
+        color: #5c2869;
+      }
+      .btn {
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+      .btn-login {
+        background: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+      }
+      .btn-login:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+    .dropdown {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 40px 100px;
+      display: none;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border-radius: 0 0 16px 16px;
+      justify-content: space-between;
+      gap: 60px;
+      animation: slideDown 0.3s ease forwards;
+      z-index: 15;
+    }
+
+    .nav-item:hover .dropdown {
+      display: flex;
+    }
+
+    .dropdown-column h4 {
+      font-size: 16px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .listname li {
+      color: grey;
+      list-style: disc;
+      margin-left: 100px;
+      margin-bottom: 8px;
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    /* Upload Section */
+    .upload-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding-top: 100px; 
+    }
+    .upload-container {
+      background: #fff;
+      border: 2px dashed var(--accent);
+      border-radius: 16px;
+      padding: 40px;
+      width: 400px;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .upload-container:hover {
+      transform: translateY(-5px);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .upload-container.dragover {
+      border-color: var(--primary);
+      background: #f0e8f5;
+    }
+
+    .upload-container h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .upload-container p {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .upload-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .upload-btn:hover {
+      background: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .file-name {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      color: var(--success);
+      font-weight: 600;
+      animation: fadeText 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeText {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+    @media screen and (max-width: 768px) {
+        .upload-section {
+          margin-top: 200px;
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        nav {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .nav ul {
+          gap: 20px;
+        }
+        
+      }
+
+  </style>
+</head>
+<body>
+
+ <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="favicon/nav_logo.png"
+              alt="Progrescv Logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <div class="nav-links">
+          <div class="nav-item">
+            <a href="index.html" class="active">Home</a>
+          </div>
+
+          <div class="nav-item">
+            Templates
+            <div class="dropdown">
+              <div class="dropdown-column">
+                <h4><a href="template.html">Professional</a></h4>
+                <ul class="listname">
+                  <li>Modern Professional</li>
+                  <li>Executive Suite</li>
+                  <li>Corporate Classic</li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4><a href="template.html">Creative</a></h4>
+                <ul class="listname">
+                  <li>Creative Designer</li>
+                  <li>Artistic Flair</li>
+                  <li>Visual Storyteller</li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4><a href="template.html">Minimal</a></h4>
+                <ul class="listname">
+                  <li>Minimalist</li>
+                  <li>Bare Essentials</li>
+                  <li>Zen Minimal</li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4><a href="template.html">Modern</a></h4>
+                <ul class="listname">
+                  <li>Tech Innovator</li>
+                  <li>Digital Nomad</li>
+                  <li>Future Forward</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item">
+            Blogs
+            <div class="dropdown">
+              <div class="dropdown-column">
+                <h4><a href="blog.html">Interview Tips</a></h4>
+                <ul class="listname">
+                  <li>Explaining Resume Gaps with Confidence</li>
+                  <li>Mastering Body Language for Interviews</li>
+                  <li>Follow-Up Etiquette After an Interview</li>
+                  <li>Best Questions to Ask at the End of an Interview</li>
+                  <li>Top 10 Mistakes to Avoid During an Interview</li>
+                  <li>What to Do After an Interview</li>
+                  <li>How to Build Confidence Before an Interview</li>
+                  <li>How to Prepare for Technical Interviews</li>
+                  <li>Negotiation Skills for Your Next Job Offer</li>
+                  <li>10 Common Interview Questions and How to Answer Them</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item"><a href="pricing.html">Pricing</a></div>
+        </div>
+
+        <div class="nav-buttons">
+          <a href="login.html"><button class="btn btn-login">Login</button></a>
+          <a href="builder1.html"
+            ><button class="btn btn-login">Create Resume</button></a
+          >
+        </div>
+      </nav>
+  <div class="upload-section">
+    <div class="upload-container" id="upload-container">
+      <h2>Upload Your CV</h2>
+      <p>Drag & drop your CV here or click the button below</p>
+      <label class="upload-btn" for="fileInput">Choose File</label>
+      <input type="file" id="fileInput" accept=".pdf,.doc,.docx" />
+      <div class="file-name" id="file-name">No file selected</div>
+      <div class="message" id="message"></div>
+    </div>
+  </div>
+
+  <script>
+    const uploadContainer = document.getElementById("upload-container");
+    const fileInput = document.getElementById("fileInput");
+    const fileName = document.getElementById("file-name");
+    const message = document.getElementById("message");
+
+    function simulateUpload(file) {
+      message.textContent = "Uploading...";
+      setTimeout(() => {
+        message.textContent = "File Uploaded Successfully!";
+        setTimeout(() => {
+          window.location.href = "score_result.html";
+        }, 1000);
+      }, 1500);
+    }
+
+    uploadContainer.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      uploadContainer.classList.add("dragover");
+    });
+
+    uploadContainer.addEventListener("dragleave", () => {
+      uploadContainer.classList.remove("dragover");
+    });
+
+    uploadContainer.addEventListener("drop", (e) => {
+      e.preventDefault();
+      uploadContainer.classList.remove("dragover");
+      if (e.dataTransfer.files.length) {
+        fileInput.files = e.dataTransfer.files;
+        fileName.textContent = e.dataTransfer.files[0].name;
+        simulateUpload(e.dataTransfer.files[0]);
+      }
+    });
+
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files.length) {
+        fileName.textContent = fileInput.files[0].name;
+        simulateUpload(fileInput.files[0]);
+      }
+    });
+  </script>
+
+</body>
+</html>

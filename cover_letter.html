@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProgresCV Cover Letter Templates</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      :root {
+        --bg: #f5f7fb;
+        --primary: #0f1724;
+        --accent: #420d2b;
+        --accent-2: #6d2a7a;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --glass: rgba(255, 255, 255, 0.6);
+        --rounded: 14px;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+        color: var(--primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.45;
+      }
+
+      /* Header  */
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px 28px;
+        max-width: 1200px;
+        margin: 18px auto 8px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--primary);
+      }
+      .brand img {
+        height: 42px;
+        width: auto;
+      }
+      .breadcrumb {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: white;
+        box-shadow: 0 8px 20px rgba(3, 105, 161, 0.12);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid rgba(15, 23, 36, 0.06);
+      }
+
+      /* Page header */
+      header.hero {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 28px;
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .hero-left {
+        flex: 1;
+      }
+      .hero-left h1 {
+        font-size: 30px;
+        margin: 0 0 8px;
+        color: var(--primary);
+      }
+      .hero-left p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .hero-right {
+        width: 220px;
+        text-align: right;
+      }
+      .hero-badge {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(14, 165, 233, 0.08);
+        color: var(--accent-2);
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      /* Templates grid */
+      .templates {
+        max-width: 1200px;
+        margin: 18px auto 80px;
+        padding: 18px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: var(--rounded);
+        overflow: hidden;
+        box-shadow: 0 6px 22px rgba(16, 24, 40, 0.06);
+        transition: transform 300ms cubic-bezier(0.2, 0.9, 0.2, 1),
+          box-shadow 300ms;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+      .card a {
+        text-decoration: none;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+      }
+
+      .card-thumb {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+
+      .card-body {
+        padding: 16px 18px 18px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .card-body h3 {
+        margin: 0;
+        font-size: 18px;
+        color: var(--accent-2);
+      }
+      .card-body p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        flex: 1;
+      }
+
+      .card-footer {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px 16px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 13px;
+        background: rgba(3, 105, 161, 0.06);
+        color: var(--accent-2);
+      }
+
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .cover-block {
+        max-width: 880px;
+        margin: 6px auto 100px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.85),
+          rgba(245, 247, 251, 0.95)
+        );
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(2, 6, 23, 0.06);
+        padding: 20px;
+        text-align: center;
+      }
+      .cover-block h3 {
+        margin: 8px 0 6px;
+        color: var(--primary);
+      }
+      .cover-list {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .cover-list .pill {
+        background: white;
+        border-radius: 999px;
+        padding: 10px 14px;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .pill:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 30px rgba(2, 6, 23, 0.08);
+      }
+
+      /* Modal preview  */
+      .modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(2, 6, 23, 0.45);
+        z-index: 1100;
+        padding: 20px;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .modal-card {
+        width: 100%;
+        max-width: 900px;
+        background: white;
+        border-radius: 12px;
+        overflow: auto;
+        max-height: 90vh;
+        box-shadow: 0 30px 80px rgba(2, 6, 23, 0.3);
+      }
+      .modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .modal-body {
+        padding: 18px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .center {
+        text-align: center;
+      }
+      .mb-8 {
+        margin-bottom: 8px;
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 880px) {
+        .hero-right {
+          display: none;
+        }
+      }
+      @media (max-width: 520px) {
+        .topbar {
+          padding: 14px;
+        }
+        .brand h2 {
+          font-size: 16px;
+        }
+        .card-thumb {
+          height: 140px;
+        }
+      }
+      .card {
+        background: var(--card);
+        border-radius: var(--rounded);
+        overflow: hidden;
+        box-shadow: 0 6px 22px rgba(16, 24, 40, 0.06);
+        transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.2, 1),
+          box-shadow 0.4s;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(16, 24, 40, 0.12);
+      }
+      .card-thumb {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        transition: transform 0.5s ease;
+      }
+      .card:hover .card-thumb {
+        transform: scale(1.08);
+      }
+
+      .use-btn {
+        position: absolute;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #fff;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        box-shadow: 0 6px 14px rgba(14, 165, 233, 0.25);
+        transition: all 0.35s ease;
+      }
+
+      .card:hover .use-btn {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      .footer-bottom {
+        margin-top: 40px;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      .footer-bottom p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .footer-bottom a {
+        color: #420d2b;
+        text-decoration: none;
+      }
+
+      .footer-bottom a:hover {
+        text-decoration: underline;
+      }
+
+      .social-icons {
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        color: #420d2b;
+        font-size: 24px;
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: #6d2a7a;
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <a href="index.html" class="brand">
+        <img src="favicon/nav_logo.png" alt="logo" />
+      </a>
+      <div class="breadcrumb muted">Templates › Cover Letters</div>
+      <div class="actions">
+        <a href="builder1.html" class="btn btn-ghost"
+          ><i class="fa-solid fa-file-pen"></i> Build Resume</a
+        >
+        <a href="info.html" class="btn btn-primary"
+          ><i class="fa-solid fa-envelope"></i> New Cover Letter</a
+        >
+      </div>
+    </div>
+    <header class="hero" aria-hidden="false">
+      <div class="hero-left">
+        <h1>Cover letter templates</h1>
+        <p class="muted">
+          Choose a professional cover letter that matches your resume preview
+          and select to customize instantly.
+        </p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-badge"><i class="fa-solid fa-star"></i> Popular</div>
+      </div>
+    </header>
+
+    <section class="templates" aria-label="Cover letter templates">
+      <article class="card" data-template="elegant">
+        <img
+          class="card-thumb"
+          src="images/cover_letter1.jpg"
+          alt="Elegant cover letter thumbnail"
+        />
+        <a href="cover1.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+
+      <article class="card" data-template="modern">
+        <img
+          class="card-thumb"
+          src="images/cover_letter2.jpg"
+          alt="Modern cover letter thumbnail"
+        />
+        <a href="cover2.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter3.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover3.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter4.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover4.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter5.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover5.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter6.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover6.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter7.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover7.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter8.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover8.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter9.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover9.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter10.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover10.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter11.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover11.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+      <article class="card" data-template="corporate">
+        <img
+          class="card-thumb"
+          src="images/cover_letter12.jpg"
+          alt="Corporate cover letter thumbnail"
+        />
+        <a href="cover12.html" class="use-btn">
+          Use This Template
+        </a>
+      </article>
+    </section>
+
+    <footer>
+      <div class="footer-bottom">
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+
+        <p>Made with love by people who care.</p>
+        <p>© 2025 Progescv. All rights reserved.</p>
+        <br />
+      </div>
+    </footer>
+  </body>
+</html>

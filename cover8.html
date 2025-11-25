@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progrescv Cover Letter</title>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Work Sans", sans-serif;
+        margin: 40px;
+        background-color: #c9b9b9;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 800px;
+        background: white;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        overflow: hidden;
+        padding-bottom: 20px;
+      }
+
+      .cover-letter {
+        display: grid;
+        grid-template-columns: 230px 1fr;
+      }
+      /* Sidebar */
+      .sidebar {
+        background-color: #2383c7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 230px;
+        padding: 40px 25px;
+        margin-left: 30px;
+      }
+      .profile-pic {
+        margin-top: 20px;
+        width: 140px;
+        height: 140px;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 4px solid white;
+        overflow: hidden;
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-title {
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-top: -10px;
+        text-align: center;
+        line-height: 1.35;
+      }
+
+      .sidebar-section {
+        width: 230px;
+        background-color: #d7e7f2;
+        padding: 15px 20px;
+        color: #143f86;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+
+      .sidebar-text {
+        width: 230px;
+        background-color: #daf1ff;
+        color: #0d2e69;
+        font-weight: 400;
+        font-size: 13px;
+        padding: 15px 20px;
+        line-height: 1.5;
+        white-space: pre-line;
+      }
+
+      /* Main content */
+      .main-content {
+        margin-left: 50px;
+        padding: 40px 50px 40px 40px;
+        color: #2d2d2d;
+      }
+
+      .main-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        letter-spacing: 0.02em;
+      }
+
+      .main-subtitle {
+        color: #5f6c75;
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .divider {
+        border-top: 3px solid #cde1ea;
+        margin: 20px 0 30px 0;
+      }
+
+      /* Icons  */
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #586e80;
+        font-weight: 600;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #cde1ea;
+      }
+
+      .info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+        min-width: 75px;
+      }
+
+      .info-icon {
+        width: 28px;
+        height: 28px;
+        fill: #2583ce;
+      }
+
+      /* Contact details*/
+      .content-text {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-top: 30px;
+        color: #4a4a4a;
+      }
+
+      .content-text p {
+        margin-bottom: 16px;
+      }
+
+      /* Subtle heading */
+      .subheading {
+        font-weight: 600;
+        margin-top: 40px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #1f3c69;
+      }
+      button {
+        height: 50px;
+        background-color: #2383c7;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 30px;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+      @media (max-width: 900px) {
+        .cover-letter {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .sidebar {
+          width: 100%;
+          margin-left: 0;
+          padding: 20px;
+        }
+
+        .sidebar-section,
+        .sidebar-text {
+          width: 100%;
+          padding: 12px 15px;
+        }
+
+        .main-content {
+          margin-left: 0;
+          padding: 20px;
+        }
+
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+        }
+
+        .main-title {
+          font-size: 20px;
+        }
+
+        .main-subtitle {
+          font-size: 13px;
+        }
+
+        button {
+          width: 100%;
+          margin: 15px 0;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .profile-pic {
+          width: 100px;
+          height: 100px;
+        }
+
+        .sidebar-section,
+        .sidebar-text {
+          font-size: 12px;
+          padding: 10px 12px;
+        }
+
+        .main-content {
+          padding: 15px 15px;
+        }
+
+        .main-title {
+          font-size: 18px;
+        }
+
+        .main-subtitle {
+          font-size: 12px;
+        }
+
+        .content-text p {
+          font-size: 12px;
+        }
+
+        .subheading {
+          font-size: 14px;
+        }
+
+        button {
+          font-size: 14px;
+          height: 45px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      contenteditable="true"
+      id="contentToPrint"
+      class="container"
+      role="main"
+      aria-label="Cover letter document"
+    >
+      <div class="cover-letter">
+        <aside class="sidebar" aria-label="Profile and contact info">
+          <div
+            class="profile-pic"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            <img
+              id="profilePic"
+              src="https://images.unsplash.com/photo-1519456264917-42d0aa2e0625?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ym95fGVufDB8fDB8fHww"
+              alt="Profile Picture"
+            />
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              style="display: none"
+              onchange="previewImage(event)"
+            />
+          </div>
+          <div class="profile-title">CANGESSIONAL ATHMOIAVE LEITER</div>
+
+          <div>
+            <div class="sidebar-section">Profile</div>
+            <div class="sidebar-text">
+              Commtntie 8 Plong Rontert com Hobel Devielval Egpom Ccotal
+              Comerwban Lastjg Usrenation Facty Commtutur dation;kirtelly Naker
+              Cupny Camog Resynere usur Canvull
+            </div>
+          </div>
+          <div>
+            <div class="sidebar-section">Accountial</div>
+            <div class="sidebar-text">
+              Accocriy tnot Auttum Actmonoor Mariviorts Amplise
+            </div>
+          </div>
+          <div>
+            <div class="sidebar-section">Nianna</div>
+            <div class="sidebar-text">
+              Decorgbult : PW Pope.com Net: 1gpki, 16 00A1
+              Connectontimervattids.com
+            </div>
+          </div>
+        </aside>
+        <section class="main-content" aria-label="Cover letter content">
+          <h1 class="main-title">Cange Ruten Perne</h1>
+          <p class="main-subtitle">
+            Nur bee ccme oucnwotet potiin eutbble brautfly srctting for wieing
+            confinrenee proople lae you etry anoue 6
+          </p>
+          <div class="divider"></div>
+          <div class="info-row" aria-label="Summary info">
+            <div class="info-item">
+              <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3 7v10h18V7H3zm2 2h14v6H5V9z"
+                  fill="none"
+                  stroke="#2583ce"
+                  stroke-width="2"
+                />
+              </svg>
+              <div>9500</div>
+              <small>NCE A5835B<br />Hero 6000k</small>
+            </div>
+
+            <div class="info-item">
+              <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2v12M5 9l7-7 7 7"
+                  fill="none"
+                  stroke="#2583ce"
+                  stroke-width="2"
+                />
+              </svg>
+              <div>NS TOS 12</div>
+              <small>Wanding Fciaw</small>
+            </div>
+
+            <div class="info-item">
+              <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  fill="none"
+                  stroke="#2583ce"
+                  stroke-width="2"
+                />
+                <path
+                  d="M12 6v6l4 2"
+                  fill="none"
+                  stroke="#2583ce"
+                  stroke-width="2"
+                />
+              </svg>
+              <div>9300</div>
+              <small>07/31/2011<br />21tch@prlast.com</small>
+            </div>
+          </div>
+
+          <div class="content-text" tabindex="0">
+            <p>
+              Preaaptaping che lewgs ofttremtutton cover nerve antanghtto
+              empanaly datacoic cansas malalable. I Like poesse our pooluot,
+              emononurge handhabed severo you constmoaing, ceat erantfome ase
+              grits the moorinent, eever moyer thre scomduslve ane dupisie
+              gentjone.
+            </p>
+
+            <p>
+              Theree tan loue cher an a mouv the noy.d you use, wider were'reg1,
+              busimna, the perces. Te, chet cernheals utouig se ycoux heailis
+              the noildein, and groements expont nea commonting hav artuk, rue
+              manoar toc'maryour tring fr:crew the libareoiemtelsie for diderse
+              ani ograaff margernemt.
+            </p>
+
+            <p>
+              Furee couess anid eckts ha ueplli; sefatlinhy thing your drst, the
+              perfirnaos Furte a Lest harality nahers therissiues connent. Hap
+              asaiti, the sony areuts, buwing milesoe your Piment etta cecraible
+              you. ile luse permentkle conneut.
+            </p>
+
+            <p>Drohenyetm.</p>
+
+            <h2 class="subheading">Douals</h2>
+            <p>
+              A miort there'sesive hese alogs' yoor lase<br />Eyptergrito der
+              the 7988 to my bel coctr ne your coom
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <button id="downloadBtn">Download PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      const btn = document.getElementById("downloadBtn");
+      const content = document.getElementById("contentToPrint");
+
+      btn.addEventListener("click", () => {
+        html2canvas(content, {
+          scale: 2,
+          useCORS: true,
+          scrollY: -window.scrollY,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelector(".profile-pic").style.overflow = "hidden";
+            clonedDoc.querySelector(".profile-pic").style.borderRadius = "50%";
+          },
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [canvas.width, canvas.height],
+          });
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          pdf.save("cover-letter.pdf");
+        });
+      });
+    </script>
+  </body>
+</html>

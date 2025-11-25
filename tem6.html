@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <title>progrescv Resume</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background-color: #fef9f1;
+        color: #8c6c44;
+      }
+      .container {
+        display: flex;
+        max-width: 900px;
+        padding-bottom: 70px;
+        margin: 40px auto;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+      .left-column {
+        background-color: #f7f1e9;
+        width: 35%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid #d9cbbf;
+      }
+      .left-column img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .name {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 10px;
+
+        color: #7f603b;
+      }
+
+      .bio {
+        font-size: 14px;
+        line-height: 1.5;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #d9cbbf;
+      }
+      .section {
+        margin-top: 30px;
+      }
+      .section-title {
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        margin-bottom: 12px;
+        font-size: 16px;
+      }
+      .skills ul,
+      .education ul {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #d9cbbf;
+      }
+      .skills ul,
+      .education ul,
+      .training ul {
+        padding-left: 20px;
+        margin: 0;
+        list-style-type: disc;
+      }
+      .skills ul li,
+      .education ul li,
+      .training ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      .right-column {
+        width: 65%;
+        padding: 40px 40px 40px 70px;
+        box-sizing: border-box;
+      }
+      .contact-info {
+        font-size: 14px;
+        margin-bottom: 30px;
+        line-height: 1.5;
+      }
+      .contact-info p {
+        margin: 3px 0;
+      }
+      .career-summary,
+      .training {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .career-summary h3 {
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #7f603b;
+      }
+      .job-title {
+        font-weight: 700;
+        font-size: 14px;
+        margin-top: 15px;
+      }
+      .job-duration {
+        font-weight: 700;
+        font-style: normal;
+        margin-bottom: 10px;
+        font-size: 13px;
+      }
+      ul.job-points {
+        padding-left: 20px;
+        margin: 0 0 10px 0;
+        list-style-type: disc;
+      }
+      ul.job-points li {
+        margin-bottom: 8px;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+
+      .btn-container button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #8c6c44;
+        color: white;
+        cursor: pointer;
+        margin-left: 600px;
+        margin-bottom: 30px;
+      }
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+          max-width: 95%;
+          margin: 20px auto;
+        }
+
+        .left-column,
+        .right-column {
+          width: 100%;
+          padding: 20px;
+          border-right: none;
+        }
+
+        .right-column {
+          padding: 20px;
+        }
+
+        .btn-container button {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .name {
+          font-size: 22px;
+        }
+
+        .section-title {
+          font-size: 15px;
+        }
+
+        .career-summary h3 {
+          font-size: 16px;
+        }
+
+        .container {
+          margin: 15px auto;
+          box-shadow: none;
+        }
+
+        .btn-container button {
+          font-size: 16px;
+          padding: 12px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" id="resume" class="container">
+      <div class="left-column">
+        <img
+          id="profilePic"
+          src="https://images.unsplash.com/photo-1464863979621-258859e62245?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybCUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+          alt="Profile Photo"
+          style="cursor: pointer"
+          onclick="document.getElementById('fileInput').click();"
+        />
+
+        <div class="name">LILA<br /><strong>AKIYAMA</strong></div>
+        <p class="bio">
+          Innovative art director with five years of experience in visual
+          storytelling and a strong background in branding and multimedia
+          production
+        </p>
+        <div class="section skills">
+          <div class="section-title">Skills</div>
+          <ul>
+            <li>Art Direction</li>
+            <li>Project Management</li>
+            <li>Budget Management</li>
+            <li>Print Production</li>
+            <li>Creative Strategy Development</li>
+            <li>Graphic and Web Design</li>
+          </ul>
+        </div>
+        <div class="section education">
+          <div class="section-title">Educational Background</div>
+          <ul>
+            <li>
+              <strong>North City University</strong><br />Bachelor of Fine
+              Arts<br /><small>— June 2040</small>
+            </li>
+            <li>
+              <strong>North City High School</strong><br />High School
+              Diploma<br /><small>— May 2030</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="contact-info">
+          <p>123 Anywhere St., Any City, ST 12345</p>
+          <p>123-456-7890</p>
+          <p>hello@reallygreatsite.com</p>
+          <p>www.reallygreatsite.com</p>
+          <p>@reallygreatsite</p>
+        </div>
+        <div class="career-summary">
+          <h3>Career Summary</h3>
+          <div>
+            <div class="job-title">
+              Marketing Art Director | Brand Innovation Co.
+            </div>
+            <div class="job-duration">2043-2045</div>
+            <ul class="job-points">
+              <li>
+                Directed creative campaigns that contributed to a 20% increase
+                in sales revenue
+              </li>
+              <li>
+                Managed a team of 10 designers, resulting in a 15% improvement
+                in operational efficiency
+              </li>
+              <li>
+                Achieved a 95% client satisfaction rate by developing on-brand
+                campaigns within budget
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="job-title">Art Director | The Branding Agency</div>
+            <div class="job-duration">2040-2043</div>
+            <ul class="job-points">
+              <li>
+                Spearheaded a rebranding initiative that resulted in a 40%
+                increase in brand recognition
+              </li>
+              <li>
+                Increased client satisfaction ratings by 30% through
+                cutting-edge design solutions
+              </li>
+              <li>
+                Successfully managed a team of 20 creatives resulting in over
+                200 marketing assets
+              </li>
+              <li>
+                Ensured all projects were completed on time and within budget
+              </li>
+              <li>
+                Generated a 50% increase in brand engagement through the
+                implementation of trend-based strategies
+              </li>
+              <li>
+                Reduced project turnaround time by 20% through streamlined
+                workflows and efficient design practices
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="training section">
+          <h3>Training and Seminars</h3>
+          <ul>
+            <li>Art in a Fast-Changing Landscape (2038)</li>
+            <li>2037 Marketing Bootcamp (August 2037)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <input
+      type="file"
+      id="fileInput"
+      accept="image/*"
+      style="display: none"
+      onchange="changeProfileImage(event)"
+    />
+
+    <div class="btn-container">
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById("resume");
+
+        const opt = {
+          margin: [0, 0, 0, 0],
+          filename: "My_Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0,
+          },
+          jsPDF: {
+            unit: "px",
+            format: [element.offsetWidth, element.offsetHeight],
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
+      }
+      document.querySelectorAll(".bar").forEach((bar) => {
+        bar.addEventListener("click", function () {
+          const fill = this.querySelector(".fill");
+          let currentWidth = parseInt(fill.style.width) || 0;
+          let newWidth = (currentWidth + 10) % 110;
+          fill.style.width = newWidth + "%";
+        });
+      });
+
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      function changeProfileImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

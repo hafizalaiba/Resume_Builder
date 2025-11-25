@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <title>Progrescv Resume</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        background: #fff;
+        color: #333;
+      }
+
+      .container {
+        display: flex;
+        max-width: 900px;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Left side */
+      .left-side {
+        background-color: #2c4f53;
+        color: #f0ead6;
+        width: 35%;
+        padding: 30px 25px 40px;
+        position: relative;
+      }
+
+      .photo {
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 90%);
+        overflow: hidden;
+        margin-bottom: 30px;
+        cursor: pointer;
+      }
+
+      .photo img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        clip-path: inherit;
+        max-height: 300px;
+      }
+
+      .left-side h2 {
+        margin-top: 0;
+      }
+
+      .section-title {
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin-top: 25px;
+        margin-bottom: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #f0ead6;
+      }
+
+      .section-title svg {
+        fill: #dc9b6b;
+        width: 20px;
+        height: 20px;
+      }
+
+      .left-side p,
+      .left-side a {
+        font-weight: 400;
+        font-size: 0.9rem;
+        margin: 3px 0 8px;
+        text-decoration: none;
+        color: #f0ead6;
+        word-wrap: break-word;
+      }
+
+      .education-item,
+      .awards-item {
+        margin-bottom: 15px;
+      }
+
+      .education-item strong,
+      .awards-item strong {
+        font-weight: 700;
+        display: block;
+        color: #fff;
+      }
+
+      .education-item em {
+        font-style: italic;
+        font-weight: 500;
+        font-size: 0.85rem;
+        color: #c7bfa1;
+        margin: 3px 0;
+      }
+
+      .education-item span {
+        font-size: 0.85rem;
+        color: #c7bfa1;
+      }
+
+      ul.skills-list {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      ul.skills-list li {
+        margin-bottom: 6px;
+        font-weight: 400;
+      }
+
+      /* Right side */
+      .right-side {
+        padding: 40px 40px 40px 40px;
+        width: 65%;
+      }
+
+      .right-side h1 {
+        font-weight: 700;
+        font-size: 2.4rem;
+        margin: 0 0 0.1em;
+        line-height: 1.1;
+        color: #333;
+      }
+
+      .right-side h2 {
+        font-weight: 400;
+        font-size: 1.1rem;
+        margin: 0 0 30px;
+        color: #666;
+      }
+
+      .right-side h3 {
+        margin-top: 20px;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: #333;
+      }
+
+      .right-side p {
+        margin: 10px 0 16px 0;
+        line-height: 1.5;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* Work experience timeline */
+      .work-experience {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        padding-left: 20px;
+        border-left: 2px solid #ccc;
+      }
+
+      .experience-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 20px;
+      }
+
+      .experience-item::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        border: 2.5px solid #ccc;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      .experience-item time {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #666;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .company {
+        font-weight: 600;
+        color: #555;
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+      }
+
+      .job-title {
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 6px;
+        color: #333;
+      }
+
+      .job-desc {
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: #666;
+        margin: 0;
+        line-height: 1.3;
+      }
+
+      /* Reference section */
+      .reference {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .ref-person {
+        width: 45%;
+        margin-top: 20px;
+      }
+
+      .ref-person h4 {
+        margin: 0 0 8px 0;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .ref-person p {
+        margin: 2px 0;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          max-width: 100%;
+        }
+        .left-side,
+        .right-side {
+          width: 100%;
+          padding: 25px;
+        }
+        .reference {
+          flex-direction: column;
+        }
+        .ref-person {
+          width: 100%;
+        }
+        .photo img {
+          max-height: 250px;
+        }
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+
+      .btn-container button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" id="resume" class="container">
+      <div class="left-side">
+        <div
+          class="photo"
+          onclick="document.getElementById('fileInput').click()"
+        >
+          <img
+            id="profilePic"
+            src="https://plus.unsplash.com/premium_vector-1682304600913-78a8adade854?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8"
+            alt="Profile Picture"
+          />
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+        </div>
+        <div class="contact">
+          <h3 class="section-title">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M22.675 16.665l-5.348-2.269a1.749 1.749 0 00-1.87.42l-2.35 2.351a16.924 16.924 0 01-7.399-7.399l2.492-2.493a1.749 1.749 0 00.405-1.895L7.354 1.323a1.5 1.5 0 00-1.672-.854l-5.057 1.218a1.5 1.5 0 00-1.143 1.77A18.042 18.042 0 008.528 20.68a18.05 18.05 0 0011.676-3.998 1.5 1.5 0 001.768-1.017z"
+              />
+            </svg>
+            Contact
+          </h3>
+          <p>hello@reallygreatsite.com</p>
+          <p>+123-456-7890</p>
+          <p>123 Anywhere St., Any City</p>
+        </div>
+        <div class="education">
+          <h3 class="section-title">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+            >
+              <path
+                fill="#dc9b6b"
+                d="M12 2L1 7l11 5 11-5-11-5zm0 7.5l-7-3.18V11l7 3.18 7-3.18V6.32l-7 3.18zM2 12v6c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-6l-10 4.55L2 12z"
+              />
+            </svg>
+            Education
+          </h3>
+
+          <div class="education-item">
+            <strong>Borcelle Business School</strong>
+            <em>Bachelor of Business Management</em>
+            <span>Completed in 2016</span>
+          </div>
+          <div class="education-item">
+            <strong>Larana Business School</strong>
+            <em>Certificate in Digital Marketing</em>
+            <span>Completed in 2014</span>
+          </div>
+        </div>
+        <div class="skill">
+          <h3 class="section-title">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="20"
+              height="20"
+            >
+              <path
+                fill="#dc9b6b"
+                d="M502.63 233.37l-45.25-45.25c-18.75-18.75-49.14-18.75-67.88 0l-28.27 28.28-70.71-70.71 28.28-28.28c18.75-18.75 18.75-49.14 0-67.88l-45.25-45.25c-18.75-18.75-49.14-18.75-67.88 0l-45.25 45.25c-18.75 18.75-18.75 49.14 0 67.88l28.28 28.28-70.71 70.71-28.28-28.28c-18.75-18.75-49.14-18.75-67.88 0l-45.25 45.25c-18.75 18.75-18.75 49.14 0 67.88l45.25 45.25c18.75 18.75 49.14 18.75 67.88 0l28.28-28.28 70.71 70.71-28.28 28.28c-18.75 18.75-18.75 49.14 0 67.88l45.25 45.25c18.75 18.75 49.14 18.75 67.88 0l45.25-45.25c18.75-18.75 18.75-49.14 0-67.88l-28.28-28.28 70.71-70.71 28.28 28.28c18.75 18.75 49.14 18.75 67.88 0l45.25-45.25c18.75-18.75 18.75-49.14 0-67.88z"
+              />
+            </svg>
+            Skill
+          </h3>
+
+          <ul class="skills-list">
+            <li>Management Skills</li>
+            <li>Digital Marketing</li>
+            <li>Negotiation</li>
+            <li>Critical Thinking</li>
+            <li>Communication Skills</li>
+            <li>Digital Marketing</li>
+            <li>Negotiation</li>
+          </ul>
+        </div>
+        <div class="awards">
+          <h3 class="section-title">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+            >
+              <path
+                fill="#dc9b6b"
+                d="M18 2h-3.5c-.83 0-1.5.67-1.5 1.5V5H11V3.5C11 2.67 10.33 2 9.5 2H6c-.55 0-1 .45-1 1v4c0 2.21 1.79 4 4 4h.5v2H10v2H6v2h12v-2h-4v-2h.5c2.21 0 4-1.79 4-4V3c0-.55-.45-1-1-1zm-1 7h-2V5h2v4zM7 5h2v4H7V5z"
+              />
+            </svg>
+            Awards
+          </h3>
+
+          <div class="awards-item">
+            <span>Oct 2019 | Ingoude Company</span><br />
+            <strong>The Best Employee of the Year</strong>
+          </div>
+          <div class="awards-item">
+            <span>May 2015 | Timmerman Industries</span><br />
+            <strong>The Best Employee of the Year</strong>
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <h1>Isabel<br />Schumacher</h1>
+        <h2>Sales Representative</h2>
+
+        <section class="profile">
+          <h3>Profile</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            pharetra in lorem at laoreet. Donec hendrerit libero eget est
+            tempor, quis tempus arcu elementum. In elementum elit at dui
+            tristique feugiat. Mauris convallis, mi at mattis malesuada, neque
+            nulla volutpat dolor.
+          </p>
+        </section>
+
+        <section class="work-experience-section">
+          <h3>Work Experience</h3>
+          <div class="work-experience">
+            <div class="experience-item">
+              <time>Jan 2022– Present</time>
+              <div class="company">
+                Company Name | 123 Anywhere St., Any City
+              </div>
+              <div class="job-title">Junior/ Business Consultant</div>
+              <p class="job-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                pharetra in lorem at laoreet. Donec hendrerit libero eget est
+                tempor, quis tempus arcu elementum. In elementum elit at dui
+                tristique feugiat.
+              </p>
+            </div>
+
+            <div class="experience-item">
+              <time>2017 – 2019</time>
+              <div class="company">
+                Company Name | 123 Anywhere St., Any City
+              </div>
+              <div class="job-title">Business Consultant</div>
+              <p class="job-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                pharetra in lorem at laoreet. Donec hendrerit libero eget est
+                tempor, quis tempus arcu elementum. In elementum elit at dui
+                tristique feugiat.
+              </p>
+            </div>
+
+            <div class="experience-item">
+              <time>2015 – 2017</time>
+              <div class="company">
+                Company Name | 123 Anywhere St., Any City
+              </div>
+              <div class="job-title">Business Consultant</div>
+              <p class="job-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                pharetra in lorem at laoreet. Donec hendrerit libero eget est
+                tempor, quis tempus arcu elementum. In elementum elit at dui
+                tristique feugiat.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="reference-section">
+          <h3>Reference</h3>
+          <div class="reference">
+            <div class="ref-person">
+              <h4>Estelle Darcy</h4>
+              <p>Wardiere Inc. / CEO</p>
+              <p><strong>Phone:</strong> +123-456-7890</p>
+              <p><strong>Email:</strong> hello@reallygreatsite.com</p>
+            </div>
+            <div class="ref-person">
+              <h4>Harper Russo</h4>
+              <p>Wardiere Inc. / CEO</p>
+              <p><strong>Phone:</strong> +123-456-7890</p>
+              <p><strong>Email :</strong> hello@reallygreatsite.com</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById("resume");
+
+        const opt = {
+          margin: [0, 0, 0, 0],
+          filename: "My_Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0,
+          },
+          jsPDF: {
+            unit: "px",
+            format: [element.offsetWidth, element.offsetHeight],
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
+      }
+      document.querySelectorAll(".bar").forEach((bar) => {
+        bar.addEventListener("click", function () {
+          const fill = this.querySelector(".fill");
+          let currentWidth = parseInt(fill.style.width) || 0;
+          let newWidth = (currentWidth + 10) % 110; 
+          fill.style.width = newWidth + "%";
+        });
+      });
+
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

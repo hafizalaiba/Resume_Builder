@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+    <title>Progrescv Resume</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        color: #0b1837;
+        padding: 40px 20px;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      /* Main container */
+      .resume-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px;
+        border: 1px solid #0b1837;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #0b1837;
+      }
+      .header-info {
+        max-width: 65%;
+      }
+      .header-info h1 {
+        font-weight: 600;
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+      .header-info h2 {
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .header-info p {
+        font-weight: 400;
+        font-size: 0.95rem;
+      }
+      #profilePic {
+        width: 160px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      /* Main content: two columns */
+      .main-content {
+        display: flex;
+        gap: 20px;
+        border-top: 1px solid #0b1837;
+      }
+
+      /* Left column */
+      .left-column {
+        flex: 1 1 35%;
+        border-right: 1px solid #0b1837;
+        padding: 30px 20px;
+      }
+
+      /* Right column */
+      .right-column {
+        flex: 1 1 65%;
+        padding: 30px 20px;
+      }
+
+      /* Contact info */
+      .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 0.95rem;
+      }
+      .contact-info svg {
+        width: 20px;
+        height: 20px;
+        fill: #0b1837;
+        flex-shrink: 0;
+      }
+
+      /* Section titles */
+      .section-title {
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #0b1837;
+        padding-bottom: 7px;
+      }
+
+      /* Left column sections */
+      .left-section {
+        margin-bottom: 40px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #0b1837;
+      }
+      .left-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      /* Lists (inside left and right columns) */
+      ul {
+        list-style: disc inside;
+        margin-left: 12px;
+        margin-bottom: 0;
+      }
+      ul li {
+        margin-bottom: 8px;
+      }
+
+      /* Right column education & experience */
+      .education,
+      .work-experience {
+        margin-bottom: 40px;
+      }
+      .education p,
+      .work-experience p {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        margin: 10px 0 6px 0;
+      }
+      .education ul,
+      .work-experience ul {
+        font-weight: 400;
+        text-transform: none;
+        margin-left: 20px;
+        margin-bottom: 25px;
+      }
+
+      /* Experience job title & company */
+      .work-experience p.job-title {
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .work-experience p.duration {
+        font-style: italic;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+        }
+        .header-info {
+          max-width: 100%;
+        }
+        #profilePic {
+          width: 90px;
+          height: 120px;
+        }
+        .main-content {
+          flex-direction: column;
+          border-top: none;
+        }
+        .left-column,
+        .right-column {
+          flex: 1 1 100%;
+          border-right: none;
+          border-bottom: 1px solid #0b1837;
+          padding: 20px 0 30px 0;
+        }
+        .right-column {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+        .left-section {
+          border-bottom: 1px solid #0b1837;
+          padding-bottom: 15px;
+          margin-bottom: 25px;
+        }
+        .left-section:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+       
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+
+      .btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-container button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: navy;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0 30px 0;
+}
+
+      @media (max-width: 500px) {
+  .btn-container button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" id="resume" class="resume-container">
+      <div class="header">
+        <div class="header-info">
+          <h1>Juliana Silva</h1>
+          <h2>Marketing Executive</h2>
+          <p>
+            Creative and results-driven Marketing Executive with 12 years of
+            experience in marketing.
+          </p>
+        </div>
+        <img
+          id="profilePic"
+          src="https://images.unsplash.com/photo-1464863979621-258859e62245?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybCUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+          alt="Profile Photo"
+          style="cursor: pointer"
+          onclick="document.getElementById('fileInput').click();"
+        />
+      </div>
+
+      <div class="main-content">
+        <div class="left-column">
+          <div class="contact-info left-section">
+            <div>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.53 19.53 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 13 13 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 10a16 16 0 0 0 6 6l1.36-1.36a2 2 0 0 1 2.11-.45 13 13 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              +123-456-7890
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="#7f603b">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+              <span>hello@reallygreatsite.com</span>
+            </div>
+
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#7f603b"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.93 6H16a15.6 15.6 0 0 0-1-2.56A8.01 8.01 0 0 1 17.93 8zM12 4c.77 1.23 1.42 2.66 1.83 4H10.17C10.58 6.66 11.23 5.23 12 4zM4.07 8A8.01 8.01 0 0 1 9 5.44 15.6 15.6 0 0 0 8 8H4.07zM4.07 16H8a15.6 15.6 0 0 0 1 2.56A8.01 8.01 0 0 1 4.07 16zM12 20c-.77-1.23-1.42-2.66-1.83-4h3.66c-.41 1.34-1.06 2.77-1.83 4zm3.17-6h-6v-4h6v4zm1.83 2.44A15.6 15.6 0 0 0 16 16h3.93a8.01 8.01 0 0 1-3.93 2.44z"
+                />
+              </svg>
+              <span>www.reallygreatsite.com</span>
+            </div>
+
+            <div>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z"
+                />
+              </svg>
+              123 Anywhere St., Any City
+            </div>
+          </div>
+
+          <div class="left-section">
+            <h3 class="section-title">Languages</h3>
+            <ul>
+              <li>English - Native</li>
+              <li>French - Fluent</li>
+              <li>Spanish - Intermediate</li>
+            </ul>
+          </div>
+
+          <div class="left-section">
+            <h3 class="section-title">Skills</h3>
+            <ul>
+              <li>Team Player</li>
+              <li>Analytical Thinking</li>
+              <li>Time Management</li>
+            </ul>
+          </div>
+
+          <div class="left-section">
+            <h3 class="section-title">Hobbies</h3>
+            <ul>
+              <li>Camping</li>
+              <li>Photography</li>
+              <li>Underwater Diving</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <section class="education">
+            <h3 class="section-title">Education</h3>
+            <p>
+              Master's Degree In Marketing Communications<br />Borcelle
+              University, 2009
+            </p>
+            <ul>
+              <li>Cum Laude</li>
+            </ul>
+            <p>
+              Bachelor Of Science, Major In Marketing<br />Fauget University,
+              2006
+            </p>
+            <ul>
+              <li>Cum Laude</li>
+              <li>President of Marketing Club</li>
+            </ul>
+          </section>
+
+          <section class="work-experience">
+            <h3 class="section-title">Work Experience</h3>
+
+            <p class="job-title">
+              Marketing Executive<br />Rimberio Co., London
+            </p>
+            <p class="duration">2015 - 2022</p>
+            <ul>
+              <li>
+                Planning and execution of integrated marketing plans leading to
+                double digit growth yearly.
+              </li>
+              <li>Design and implementation of new marketing structure</li>
+            </ul>
+
+            <p class="job-title">
+              Marketing Executive<br />Timmerman Industries, Istanbul
+            </p>
+            <p class="duration">2010 - 2015</p>
+            <ul>
+              <li>
+                Development of price and product segmentation for the category,
+              </li>
+              <li>Leading new brand launch,</li>
+              <li>Planning and execution of new projects for social media.</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <input
+      type="file"
+      id="fileInput"
+      accept="image/*"
+      style="display: none"
+      onchange="changeProfileImage(event)"
+    />
+
+    <div class="btn-container">
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById("resume");
+
+        const opt = {
+          margin: [0, 0, 0, 0],
+          filename: "My_Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0,
+          },
+          jsPDF: {
+            unit: "px",
+            format: [element.offsetWidth, element.offsetHeight],
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
+      }
+      document.querySelectorAll(".bar").forEach((bar) => {
+        bar.addEventListener("click", function () {
+          const fill = this.querySelector(".fill");
+          let currentWidth = parseInt(fill.style.width) || 0;
+          let newWidth = (currentWidth + 10) % 110;
+          fill.style.width = newWidth + "%";
+        });
+      });
+
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      function changeProfileImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+  </body>
+</html>

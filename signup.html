@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progrescv Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --primary: #6d2a7a;
+      --accent: #420d2b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg) 0%, #e4d8ea 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .signup-container {
+      position: relative;
+      width: 400px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      animation: popUp 0.8s ease;
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .signup-container::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(109,42,122,0.1), transparent 70%);
+      animation: rotateBg 10s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotateBg {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 25px;
+      font-size: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 8px rgba(109,42,122,0.2);
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      color: var(--accent);
+      opacity: 0.6;
+    }
+
+    .signup-btn {
+      width: 100%;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .signup-btn:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+      z-index: 1;
+      position: relative;
+    }
+
+    .login-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -20px;
+      background: rgba(109,42,122,0.2);
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Create Account</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Full Name" required>
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email" required>
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password" required>
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <button type="submit" class="signup-btn">Sign Up</button>
+      <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+  <script>
+    for (let i = 0; i < 10; i++) {
+      let bubble = document.createElement("span");
+      bubble.classList.add("bubble");
+      bubble.style.left = Math.random() * 100 + "vw";
+      bubble.style.width = bubble.style.height = Math.random() * 20 + 10 + "px";
+      bubble.style.animationDuration = Math.random() * 5 + 5 + "s";
+      document.body.appendChild(bubble);
+    }
+    const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.querySelector('input[placeholder="Full Name"]').value;
+    const email = document.querySelector('input[placeholder="Email"]').value;
+    const password = document.querySelector('input[placeholder="Password"]').value;
+    if (localStorage.getItem(email)) {
+      alert("This email is already registered!");
+    } else {
+      const user = { name, email, password };
+      localStorage.setItem(email, JSON.stringify(user));
+      alert("Sign up successful! Now you can log in.");
+      window.location.href = "login.html"; 
+    }
+  });
+  </script>
+</body>
+</html>

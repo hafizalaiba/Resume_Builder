@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <title>Progrescv Resume</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Verdana", sans-serif;
+        margin: 40px;
+        background: #fff;
+        color: #000;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        padding: 20px;
+      }
+
+      /* Header */
+      header {
+        text-align: right;
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      header h1 {
+        font-weight: 900;
+        font-size: 2.5rem;
+        letter-spacing: 0.3em;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .main-content {
+        display: flex;
+        gap: 40px;
+      }
+
+      /* Left column */
+      .left {
+        flex: 1;
+        border-right: 1px solid black;
+        padding-right: 30px;
+        padding-top: 30px;
+        font-size: 0.9rem;
+      }
+
+      .contact-info {
+        margin-bottom: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .contact-item i {
+        width: 16px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      h2,
+      h3 {
+        letter-spacing: 0.12em;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+        font-weight: 500;
+        font-size: 1.7rem;
+      }
+
+      /* Education Section */
+      .education .university {
+        margin-bottom: 18px;
+        line-height: 1.8;
+      }
+
+      .education .university strong {
+        font-weight: 900;
+      }
+
+      .education .university p {
+        margin: 2px 0;
+        font-size: 0.85rem;
+      }
+
+      hr.separator {
+        border: none;
+        border-bottom: 1px solid black;
+        margin: 15px 0 30px 0;
+      }
+
+      /* Skills */
+      .skills p {
+        line-height: 1.8;
+        margin: 5px 0;
+      }
+
+      /* Right column */
+      .right {
+        flex: 3;
+        padding-left: 30px;
+        font-size: 0.9rem;
+      }
+
+      .profile,
+      .work-experience {
+        margin-bottom: 30px;
+        line-height: 1.8;
+      }
+
+      .profile h2,
+      .work-experience h2 {
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        font-size: 1.7rem;
+      }
+
+      .profile p,
+      .work-experience p {
+        line-height: 1.8;
+        margin-top: 10px;
+        font-size: 0.95rem;
+      }
+
+      .work-experience .job {
+        margin-top: 20px;
+      }
+
+      .job-position {
+        font-weight: 900;
+        font-size: 1rem;
+      }
+
+      .company-time {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+      }
+
+      ul.job-points {
+        margin: 8px 0 0 18px;
+        padding: 0;
+      }
+
+      ul.job-points li {
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+      }
+
+      .btn-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .btn-container button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+      @media (max-width: 992px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .main-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .main-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .left {
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .right {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .job-position {
+    font-size: 0.95rem;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" id="resume" class="container">
+      <header>
+        <h1>PEDRO<br />FERNANDES</h1>
+      </header>
+
+      <div class="main-content">
+        <div class="left">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i><span>+123-456-7890</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i
+              ><span>hello@reallygreatsite.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i
+              ><span>123 Anywhere St., Any City</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-globe"></i
+              ><span>www.reallygreatsite.com</span>
+            </div>
+          </div>
+
+          <div class="education">
+            <h2>EDUCATION</h2>
+            <div class="university">
+              <strong>UNIVERSITY NAME HERE</strong>
+              <p>University Location</p>
+              <p>Degree Name</p>
+              <p>2011 - 2015</p>
+            </div>
+            <div class="university">
+              <strong>UNIVERSITY NAME HERE</strong>
+              <p>University Location</p>
+              <p>Degree Name</p>
+              <p>2011 - 2015</p>
+            </div>
+            <hr class="separator" />
+          </div>
+
+          <div class="skills">
+            <h2>SKILLS</h2>
+            <p>Editing</p>
+            <p>Layouting</p>
+            <p>Communication</p>
+            <p>Teamwork</p>
+            <p>Visual Art</p>
+            <p>Animation</p>
+            <hr class="separator" />
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="profile">
+            <h2>PROFILE</h2>
+            <p>
+              A visual artist creates works of art using a variety of materials.
+              Duties may include drawing, painting, developing murals, designing
+              in 3D, or creating mixed media art.
+            </p>
+          </div>
+
+          <div class="work-experience">
+            <h2>WORK EXPERIENCE</h2>
+
+            <div class="job">
+              <div class="job-position">JOB POSITION HERE</div>
+              <div class="company-time">Company Name | 2015 - 2018</div>
+              <p>
+                Worked on various artistic projects using different materials.
+              </p>
+              <ul class="job-points">
+                <li>Create artwork based on creative concept.</li>
+                <li>Develop a concept for exhibit or sale.</li>
+                <li>Display artwork and oversee installation at events.</li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-position">JOB POSITION HERE</div>
+              <div class="company-time">Company Name | 2015 - 2018</div>
+              <p>
+                Worked on various artistic projects using different materials.
+              </p>
+              <ul class="job-points">
+                <li>Create artwork based on creative concept.</li>
+                <li>Develop a concept for exhibit or sale.</li>
+                <li>Display artwork and oversee installation at events.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById("resume");
+
+        const opt = {
+          margin: [0, 0, 0, 0],
+          filename: "My_Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0,
+          },
+          jsPDF: {
+            unit: "px",
+            format: [element.offsetWidth, element.offsetHeight],
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
+      }
+      document.querySelectorAll(".bar").forEach((bar) => {
+        bar.addEventListener("click", function () {
+          const fill = this.querySelector(".fill");
+          let currentWidth = parseInt(fill.style.width) || 0;
+          let newWidth = (currentWidth + 10) % 110; 
+          fill.style.width = newWidth + "%";
+        });
+      });
+    </script>
+  </body>
+</html>

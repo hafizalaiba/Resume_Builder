@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProgresCV Job Finder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f7f5f0;
+        color: #102a55;
+        margin: 0;
+        padding: 0;
+      }
+      nav {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 16px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 20;
+      }
+      .logo img.logo-img {
+        height: auto;
+        width: 130px;
+        display: block;
+      }
+      .logo {
+        font-size: 22px;
+        font-weight: 700;
+        color: #6d2a7a;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        position: relative;
+      }
+
+      .nav-item {
+        position: relative;
+        font-weight: 500;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .nav-item:hover {
+        color: #6d2a7a;
+      }
+
+      .nav-item a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .nav-item:hover .dropdown,
+      .dropdown:hover {
+        display: flex;
+      }
+      .dropdown {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 40px 100px;
+        display: none;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 0 0 16px 16px;
+        justify-content: space-between;
+        gap: 60px;
+        animation: slideDown 0.3s ease forwards;
+        z-index: 15;
+        padding-top: 50px;
+        margin-top: -50px;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .dropdown-column {
+        flex: 1;
+      }
+
+      .dropdown-column h3 {
+        color: #102a55;
+        margin-bottom: 12px;
+      }
+      .dropdown-column h3 a {
+        transition: color 0.3s;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #102a55;
+        color: #102a55;
+      }
+
+      .dropdown-column a:hover {
+        color: #6d2a7a;
+      }
+      .nav-item:hover .dropdown {
+        display: flex;
+      }
+      .nav-item::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #ff7ab6, #6d2a7a);
+        transition: width 0.3s ease;
+        border-radius: 4px;
+      }
+
+      .nav-item:hover::after {
+        width: 100%;
+      }
+
+      .listname li {
+        color: grey;
+        list-style: disc;
+        margin-left: 100px;
+        margin-bottom: 8px;
+      }
+      .template-grid.two-by-two {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 60px;
+      }
+
+      .template-column {
+        background: transparent;
+      }
+
+      .cover-letter-section {
+        margin-top: 25px;
+        text-align: center;
+      }
+
+      .cover-letter-section h3 {
+        margin-bottom: 10px;
+        color: #102a55;
+        border-bottom: 2px solid #102a55;
+      }
+      .template-section h3 a {
+        border-bottom: 2px solid #102a55;
+      }
+      .template-section h3 {
+        margin-bottom: 10px;
+        color: #102a55;
+      }
+
+      .Coverlist li {
+        text-align: left;
+      }
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .nav-buttons-left {
+        margin-right: 20px;
+      }
+      #userSection {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        margin-left: 10px;
+        border: 2px solid black;
+      }
+      #userName,
+      #userEmail {
+        font-size: 13px;
+        color: #555;
+        text-transform: capitalize;
+      }
+
+      #userName {
+        font-weight: 600;
+        font-size: 16px;
+      }
+      .nav-buttons-left {
+        margin-right: 20px;
+      }
+      .nav-buttons {
+        display: flex;
+        align-items: center;
+      }
+      .avatar img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+      /* Dropdown Menu */
+      #dropdownMenu {
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      #dropdownMenu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #dropdownMenu ul li {
+        padding: 5px 10px;
+      }
+
+      #dropdownMenu ul li a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      #dropdownMenu ul li a:hover {
+        background-color: #f4f4f4;
+      }
+      .btn {
+        border: none;
+        padding: 8px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+      .btn-login {
+        margin-left: 10px;
+        background: transparent;
+        border: 1px solid #420d2b;
+        color: #420d2b;
+      }
+      .btn-login:hover {
+        background: #420d2b;
+        color: #fff;
+      }
+
+      .jobs-section {
+        text-align: center;
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .jobs-section h1 {
+        color: #6d2a7a;
+        margin-bottom: 20px;
+      }
+      .search-box {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      .search-box input {
+        padding: 12px 18px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        min-width: 250px;
+        outline: none;
+        font-size: 15px;
+      }
+      .search-box button {
+        background: #6d2a7a;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .search-box button:hover {
+        background: #420d2b;
+      }
+
+      .job-results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        padding: 0 40px;
+      }
+      .job-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+        text-align: left;
+      }
+      .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      .job-card h3 {
+        margin: 0;
+        color: #102a55;
+      }
+      .job-card p {
+        color: #555;
+        margin: 8px 0;
+        font-size: 15px;
+      }
+      .job-card a {
+        display: inline-block;
+        margin-top: 10px;
+        color: white;
+        background: #6d2a7a;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .job-card a:hover {
+        background: #420d2b;
+      }
+      nav a:hover,
+      nav a.active {
+        color: #5c2869;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="favicon/nav_logo.png"
+            alt="Progrescv Logo"
+            class="logo-img"
+          />
+        </a>
+      </div>
+      <div class="nav-links">
+        <div class="nav-item">
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-item">
+          Templates
+          <div class="dropdown big-dropdown">
+            <div class="template-section">
+              <h3>
+                <a
+                  href="template.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  Resume Templates &gt;
+                </a>
+              </h3>
+              <div class="template-grid two-by-two">
+                <div class="template-column">
+                  <h4><a href="template.html">Professional</a></h4>
+                  <ul class="listname">
+                    <li>Modern Professional</li>
+                    <li>Executive Suite</li>
+                    <li>Corporate Classic</li>
+                  </ul>
+                </div>
+
+                <div class="template-column">
+                  <h4><a href="template.html">Creative</a></h4>
+                  <ul class="listname">
+                    <li>Creative Designer</li>
+                    <li>Artistic Flair</li>
+                    <li>Visual Storyteller</li>
+                  </ul>
+                </div>
+
+                <div class="template-column">
+                  <h4><a href="template.html">Minimal</a></h4>
+                  <ul class="listname">
+                    <li>Minimalist</li>
+                    <li>Bare Essentials</li>
+                    <li>Zen Minimal</li>
+                  </ul>
+                </div>
+
+                <div class="template-column">
+                  <h4><a href="template.html">Modern</a></h4>
+                  <ul class="listname">
+                    <li>Tech Innovator</li>
+                    <li>Digital Nomad</li>
+                    <li>Future Forward</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="cover-letter-section">
+              <h3>
+                <a
+                  href="cover_letter.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  Cover Letter Templates &gt;
+                </a>
+              </h3>
+              <ul class="listname center Coverlist">
+                <li>QA Engineer</li>
+                <li>Software Tester</li>
+                <li>SDET</li>
+                <li>DevOps QA Engineer</li>
+                <li>Performance Test Engineer</li>
+                <li>Data Engineer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          Blogs
+          <div class="dropdown">
+            <div class="dropdown-column">
+              <h3>
+                <a
+                  href="blog.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  Interview Tips &gt;
+                </a>
+              </h3>
+              <ul class="listname">
+                <li>Explaining Resume Gaps with Confidence</li>
+                <li>Mastering Body Language for Interviews</li>
+                <li>Follow-Up Etiquette After an Interview</li>
+                <li>Best Questions to Ask at the End of an Interview</li>
+                <li>Top 10 Mistakes to Avoid During an Interview</li>
+                <li>What to Do After an Interview</li>
+                <li>How to Build Confidence Before an Interview</li>
+                <li>How to Prepare for Technical Interviews</li>
+                <li>Negotiation Skills for Your Next Job Offer</li>
+                <li>10 Common Interview Questions and How to Answer Them</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item"><a href="pricing.html">Pricing</a></div>
+        <div class="nav-item"><a href="job.html" class="active">Jobs</a></div>
+      </div>
+
+      <div class="nav-buttons">
+        <a href="builder1.html" class="nav-buttons-left">
+          <button class="btn btn-login">Create Resume</button>
+        </a>
+        <div
+          id="userSection"
+          style="display: none; display: flex; align-items: center; gap: 10px"
+        >
+          <div
+            class="avatar"
+            id="userAvatar"
+            onclick="triggerFileInput()"
+            style="cursor: pointer"
+          >
+            <img
+              id="profileImage"
+              src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png"
+              alt="User Avatar"
+              style="width: 45px; height: 45px; border-radius: 50%"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              margin-left: 10px;
+            "
+          >
+            <div
+              id="userName"
+              style="
+                font-weight: 600;
+                color: #333;
+                font-size: 16px;
+                text-transform: capitalize;
+              "
+            ></div>
+            <span id="userEmail" style="font-size: 13px; color: #555"></span>
+          </div>
+          <div
+            id="menuDots"
+            style="cursor: pointer; margin-left: 20px"
+            onclick="toggleDropdown()"
+          >
+            <i class="fas fa-ellipsis-v" style="font-size: 18px"></i>
+          </div>
+
+          <div
+            id="dropdownMenu"
+            style="
+              display: none;
+              position: absolute;
+              top: 50px;
+              right: 0;
+              background-color: white;
+              border: 1px solid #ddd;
+              padding: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <ul>
+              <li>
+                <a
+                  href="history.html"
+                  style="color: #333; text-decoration: none"
+                  >History</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  onclick="logout()"
+                  style="color: #333; text-decoration: none"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/*"
+            onchange="previewImage(event)"
+            style="display: none"
+          />
+        </div>
+
+        <button
+          id="loginButton"
+          class="btn btn-login"
+          onclick="window.location.href='login.html'"
+        >
+          Login
+        </button>
+      </div>
+    </nav>
+
+    <section class="jobs-section">
+      <h1>Find Your Next Job</h1>
+      <div class="search-box">
+        <input
+          type="text"
+          id="jobTitle"
+          placeholder="Job title e.g. Software Engineer"
+        />
+        <input
+          type="text"
+          id="jobLocation"
+          placeholder="Location e.g. Lahore, Karachi"
+        />
+        <button onclick="searchJobs()">Search Jobs</button>
+      </div>
+
+      <div id="jobResults" class="job-results">
+        <!-- Job cards appear here -->
+      </div>
+    </section>
+
+    <script>
+      function searchJobs() {
+        const title =
+          document.getElementById("jobTitle").value || "Software Engineer";
+        const location =
+          document.getElementById("jobLocation").value || "Pakistan";
+        const jobResults = document.getElementById("jobResults");
+        // Dummy job data replace with backend API
+        const jobs = [
+          {
+            title: "Frontend Developer",
+            company: "TechWave",
+            location: "Lahore",
+            salary: "Rs 120,000/month",
+            link: "#",
+          },
+          {
+            title: "Backend Engineer",
+            company: "SoftCloud",
+            location: "Karachi",
+            salary: "Rs 150,000/month",
+            link: "#",
+          },
+          {
+            title: "QA Tester",
+            company: "CodeWorks",
+            location: "Islamabad",
+            salary: "Rs 90,000/month",
+            link: "#",
+          },
+          {
+            title: "DevOps Engineer",
+            company: "Cloudify",
+            location: "Remote",
+            salary: "Rs 180,000/month",
+            link: "#",
+          },
+        ];
+
+        jobResults.innerHTML = "";
+        jobs.forEach((job) => {
+          const card = `
+          <div class="job-card">
+            <h3>${job.title}</h3>
+            <p><strong>Company:</strong> ${job.company}</p>
+            <p><strong>Location:</strong> ${job.location}</p>
+            <p><strong>Salary:</strong> ${job.salary}</p>
+            <a href="${job.link}" target="_blank">Apply Now</a>
+          </div>
+        `;
+          jobResults.innerHTML += card;
+        });
+      }
+      function toggleDropdown() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        if (dropdownMenu.style.display === "block") {
+          dropdownMenu.style.display = "none";
+        } else {
+          dropdownMenu.style.display = "block";
+        }
+      }
+      function logout() {
+        sessionStorage.removeItem("userEmail");
+        sessionStorage.removeItem("userProfilePic");
+        window.location.href = "index.html";
+      }
+      window.onload = function () {
+        let userEmail = sessionStorage.getItem("userEmail");
+        let userProfilePic = sessionStorage.getItem("userProfilePic");
+        if (userEmail) {
+          document.getElementById("loginButton").style.display = "none";
+          document.getElementById("userSection").style.display = "flex";
+          document.getElementById("userEmail").textContent = userEmail;
+          let namePart = userEmail.split("@")[0].replace(/[0-9]/g, "");
+          let finalName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+          document.getElementById("userName").textContent = finalName;
+          if (userProfilePic) {
+            document.getElementById("profileImage").src = userProfilePic;
+          }
+        } else {
+          document.getElementById("loginButton").style.display = "inline-block";
+          document.getElementById("userSection").style.display = "none";
+        }
+      };
+      function triggerFileInput() {
+        document.getElementById("imageUpload").click();
+      }
+      function previewImage(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const imageUrl = e.target.result;
+            document.getElementById("profileImage").src = imageUrl;
+            sessionStorage.setItem("userProfilePic", imageUrl);
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+  </body>
+</html>

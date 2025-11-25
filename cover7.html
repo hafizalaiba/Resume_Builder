@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progrescv Cover Letter</title>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 40px;
+        background: #ccc;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 900px;
+        background: white;
+        display: flex;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      /* Left teal panel */
+      .left-panel {
+        background-color: #549ea9;
+        flex-basis: 230px;
+        padding: 40px 10px 40px 10px;
+        color: #e6f0f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+
+      /* Profile Image  */
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 5px double #c7ecef;
+        overflow: hidden;
+        cursor: pointer;
+        margin-bottom: 40px;
+        box-shadow: 0 0 12px rgba(86, 144, 150, 0.8);
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Contact Info */
+      .contact-info {
+        width: 300px;
+        margin-bottom: 35px;
+        margin-right: -50px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .contact-info div {
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-info div svg {
+        fill: #b5d6dd;
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      /* Important Text Section */
+      .important-text {
+        margin-top: auto;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        user-select: none;
+      }
+
+      /* Right main panel */
+      .right-panel {
+        flex-grow: 1;
+        background: white;
+        padding: 50px 50px 50px 60px;
+        color: #3c3c3b;
+      }
+
+      .right-panel .title {
+        font-weight: 700;
+        font-size: 32px;
+        margin-bottom: 5px;
+        letter-spacing: 0.05em;
+      }
+
+      .right-panel .subtitle {
+        font-weight: 300;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+        color: #7c7c7c;
+      }
+
+      /* Date and Time */
+      .date-time {
+        font-weight: 600;
+        font-size: 13px;
+        margin-bottom: 25px;
+      }
+
+      .bold-text {
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      /* Letter content */
+      .content {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.6;
+        letter-spacing: 0.01em;
+        word-break: break-word;
+        margin-bottom: 60px;
+      }
+
+      /* Signature */
+      .signature {
+        font-family: "Lucida Handwriting", cursive;
+        font-size: 28px;
+        font-weight: 400;
+        user-select: none;
+      }
+      button {
+        height: 50px;
+        background: #304857;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 30px;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+      @media (max-width: 768px) {
+        body {
+          margin: 10px;
+          padding: 0;
+        }
+
+        .container {
+          flex-direction: column;
+          width: 100%;
+          border-radius: 5px;
+        }
+
+        .left-panel {
+          width: 100%;
+          flex-basis: auto;
+          padding: 30px 20px;
+          text-align: center;
+        }
+
+        .profile-pic {
+          margin: 0 auto 25px auto;
+          width: 110px;
+          height: 110px;
+        }
+
+        .contact-info {
+          width: 100%;
+          margin: 0;
+          margin-top: 20px;
+        }
+
+        .contact-info div {
+          justify-content: center;
+          font-size: 14px;
+        }
+
+        .right-panel {
+          padding: 30px 20px;
+        }
+
+        .right-panel .title {
+          font-size: 26px;
+        }
+
+        .right-panel .subtitle {
+          font-size: 12px;
+          letter-spacing: 1px;
+        }
+
+        .date-time {
+          font-size: 12px;
+        }
+
+        .content {
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
+
+        .signature {
+          font-size: 22px;
+        }
+
+        button {
+          width: 100%;
+          margin: 20px auto;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      contenteditable="true"
+      id="contentToPrint"
+      class="container"
+      role="main"
+      aria-label="Cover Letter"
+    >
+      <aside
+        class="left-panel"
+        aria-label="Personal Information and Contact Details"
+      >
+        <div
+          class="profile-pic"
+          onclick="document.getElementById('fileInput').click()"
+        >
+          <img
+            id="profilePic"
+            src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            alt="Profile Picture"
+          />
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+        </div>
+
+        <div class="contact-info" aria-label="Contact Information">
+          <div>
+            <svg viewBox="0 0 24 24" class="icon">
+              <path
+                d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"
+              />
+            </svg>
+            Gractorv @320
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24" class="icon">
+              <path
+                d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"
+              />
+            </svg>
+            Cubrease Socure
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24" class="icon">
+              <path
+                d="M6.6 10.8c1.1 2.1 2.9 4 5 5.1l1.7-1.7c.3-.3.8-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1v3.3c0 .6-.4 1-1 1C9.9 20 4 14.1 4 6.8c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-1.7 1.7z"
+              />
+            </svg>
+            855 555 7766
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24" class="icon">
+              <path
+                d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2c1.9 0 3.5 2.9 3.9 6H8.1c.4-3.1 2-6 3.9-6zm-3.9 8h7.8c-.4 3.1-2 6-3.9 6s-3.5-2.9-3.9-6zm10.7 0h2.1a8 8 0 01-1.6 4.6c-.6-.4-1.3-.8-2.1-1.1.2-1.1.4-2.3.4-3.5zm2.1-2h-2.1c-.1-1.3-.2-2.4-.4-3.5.8-.3 1.5-.6 2.1-1.1A8 8 0 0120.9 10zm-15.8 2H3a8 8 0 001.6 4.6c.6-.4 1.3-.8 2.1-1.1-.2-1.1-.4-2.3-.4-3.5zm-.4-2c.1-1.3.2-2.4.4-3.5-.8-.3-1.5-.6-2.1-1.1A8 8 0 003 10h1.7z"
+              />
+            </svg>
+            Treatsveri.com
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24" class="icon">
+              <path d="M4 4h16v16H4zM7 8h10v2H7zm0 4h6v2H7z" />
+            </svg>
+            Longoboului
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24" class="icon">
+              <path
+                d="M2 7a2 2 0 012-2h16a2 2 0 012 2v3H2V7zm0 5h20v5a2 2 0 01-2 2H4a2 2 0 01-2-2v-5z"
+              />
+            </svg>
+            35709 9140 06841
+          </div>
+
+          <div>
+            <svg viewBox="0 0 24 24" class="icon">
+              <path
+                d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 10h-4v5h-2v-5H7V10h4V5h2v5h4v2z"
+              />
+            </svg>
+            Mechon.com
+          </div>
+        </div>
+      </aside>
+
+      <section class="right-panel" aria-label="Cover Letter Content">
+        <h1 class="title">COVER LETTER</h1>
+        <p class="subtitle">PROFESSIONAL LETTEL</p>
+
+        <p class="date-time">Yeann 11 40, 2013<br />Tame: 152;8000</p>
+        <p class="bold-text">Foncater Your Time</p>
+
+        <div class="content">
+          Wan de cus ot sontect the lonnuil cover letter to mon orpertate
+          intests alunesess. An youce thet edir nusplesintate towill br
+          prendoas; conctaring gvemtity billing prous and posess, your all no
+          ruvier or ipton and eqytreee.<br /><br />
+          Your betiness an commatality seant your ctur ware to maaanith with
+          percomtanl brcen a tbuly had orrenting mstinres, yeb.37 inad tentslife
+          pachtoirpoticrustamexng cr ass as deaton thennis carnes a rixdm for of
+          vonuuath smede aclvmulubely cutlees oinnllttensihg conotant for your
+          etep to litte proer ecconisinint the spotolgle wl the a computed
+          rpeeting contury.<br /><br />
+          We rceef the beamgraned any do oves labining parr ot diosclordie ovea
+          elecmontage you bewcad comet the asloltiy d the amprscolatng mting
+          aoconnanety my bioglanalet. The ttrram bic amorr your cracoriance and
+          micks ane clin tior comnantly vackeud the al thead fowv doothtls
+          orcez) tunirieanxl soul'remeeostuls emmyne A lererate the, Slogging
+          pencea cta poffeces-oilit are rmoertttilisc usig jlpoper
+          ttime-espuliets, jnomctios in ha neaping provie retl're onpeove aftes
+          worde.<br /><br />
+          He uvey our desige namly lntion, Sonst prens ane to a louxd wlll the
+          ewo your pentinubl letee trernetations comamitkat or yor tlegltsmment,
+          your on prev ve lis oess. Your doing Becunn and outlidnins your potter
+          all.lown your lloaire.
+        </div>
+
+        <p>Yeac Kile:</p>
+        <p class="signature" aria-label="Signature">Rhef Afmoner</p>
+      </section>
+    </div>
+    <button id="downloadBtn">Download PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      const btn = document.getElementById("downloadBtn");
+      const content = document.getElementById("contentToPrint");
+
+      btn.addEventListener("click", () => {
+        html2canvas(content, {
+          scale: 2,
+          useCORS: true,
+          scrollY: -window.scrollY,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelector(".profile-pic").style.overflow = "hidden";
+            clonedDoc.querySelector(".profile-pic").style.borderRadius = "50%";
+          },
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [canvas.width, canvas.height],
+          });
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          pdf.save("cover-letter.pdf");
+        });
+      });
+    </script>
+  </body>
+</html>

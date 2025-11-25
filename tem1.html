@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progrescv Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #fff;
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .resume-container {
+        display: flex;
+        width: 100%;
+        max-width: 900px;
+        border: 1px solid #ccc;
+        background: white;
+        flex-wrap: wrap;
+      }
+      .left,
+      .right {
+        box-sizing: border-box;
+      }
+
+      /* Left Column */
+      .left {
+        width: 30%;
+        background: #f4f7fb;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 2px solid #0a1d3b;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .profile-img:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+
+      #fileInput {
+        display: none;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 18px;
+        color: #102a55;
+        margin-bottom: 10px;
+      }
+
+      .section {
+        margin-top: 25px;
+        text-align: left;
+      }
+
+      .section h3 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #102a55;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+
+      .section ul {
+        list-style: none;
+      }
+
+      .section ul li {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+
+      /* Right Column */
+      .right {
+        width: 70%;
+        padding: 40px;
+      }
+
+      .header {
+        background: #102a55;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+      }
+
+      .header h4 {
+        font-weight: 400;
+        letter-spacing: 3px;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      .sub-section {
+        margin-bottom: 30px;
+      }
+
+      .sub-section h2 {
+        font-size: 14px;
+        color: #102a55;
+        font-weight: 600;
+        letter-spacing: 2px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+
+      .sub-section p {
+        font-size: 13px;
+        color: #444;
+        text-align: justify;
+      }
+
+      .job {
+        margin-top: 15px;
+      }
+
+      .job h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #102a55;
+      }
+
+      .job small {
+        display: block;
+        color: #888;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .job ul {
+        font-size: 13px;
+        padding-left: 20px;
+        color: #444;
+      }
+
+      .references {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .reference {
+        width: 48%;
+      }
+
+      .reference p {
+        font-size: 13px;
+        margin: 5px 0;
+      }
+
+      /* Button */
+      .btn-container {
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 30px;
+      }
+
+      button {
+        background-color: #102a55;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0a1d3b;
+      }
+
+      /* Editable Text */
+      [contenteditable="true"] {
+        outline: none;
+      }
+
+      [contenteditable="true"]:focus {
+        background-color: #eef3ff;
+      }
+      .bubble {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-left: 5px;
+        background-color: #ccc;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        vertical-align: middle;
+      }
+
+      .bubble.active {
+        background-color: #102a55;
+      }
+
+      @media (max-width: 992px) {
+        .resume-container {
+          flex-direction: column;
+        }
+
+        .left,
+        .right {
+          width: 100%;
+        }
+
+        .left {
+          padding: 20px;
+          text-align: center;
+        }
+
+        .right {
+          padding: 25px;
+        }
+
+        .header h1 {
+          font-size: 24px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .profile-img {
+          width: 120px;
+          height: 120px;
+        }
+
+        .header {
+          padding: 18px;
+        }
+
+        .header h1 {
+          font-size: 22px;
+        }
+
+        .header h4 {
+          font-size: 12px;
+        }
+
+        .sub-section h2 {
+          font-size: 13px;
+        }
+
+        .sub-section p {
+          font-size: 12px;
+        }
+
+        .section h3 {
+          font-size: 13px;
+        }
+
+        .section ul li {
+          font-size: 12px;
+        }
+
+        .references {
+          flex-direction: column;
+        }
+
+        .reference {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+
+        .btn-container {
+          margin-left: 0 !important;
+          text-align: center;
+        }
+        .btn-container button {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+
+     
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" class="container">
+      <div class="resume-container" id="resume">
+        <div class="left">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJZzBC8RHrbGEdKs3aedJR3EpCg1Xu5C_Uvg&s"
+            alt="Profile"
+            class="profile-img"
+            id="profileImage"
+            title="Click to change photo"
+          />
+          <input type="file" id="fileInput" accept="image/*" />
+
+          <div class="section contact">
+            <h3>CONTACT</h3>
+            <ul>
+              <li>
+                <span>📞</span>
+                <span contenteditable="true">+123 456 7890</span>
+              </li>
+              <li>
+                <span>📧</span>
+                <span contenteditable="true">hello@email.com</span>
+              </li>
+              <li>
+                <span>📍</span>
+                <span contenteditable="true">123 Anywhere St, Any City</span>
+              </li>
+              <li>
+                <span>🌐</span>
+                <span contenteditable="true">www.mywebsite.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section education">
+            <h3>EDUCATION</h3>
+            <ul>
+              <li contenteditable="true">
+                <strong>2029 - 2030</strong><br />Master of Business
+                Management<br /><em>Wardiere University</em>
+              </li>
+              <br />
+              <li contenteditable="true">
+                <strong>2025 - 2029</strong><br />Bachelor of Business<br /><em
+                  >Wardiere University</em
+                ><br />GPA: 3.8 / 4.0
+              </li>
+            </ul>
+          </div>
+
+          <div class="section skills">
+            <h3>SKILLS</h3>
+            <ul contenteditable="true">
+              <li>Project Management</li>
+              <li>Public Relations</li>
+              <li>Teamwork</li>
+              <li>Leadership</li>
+              <li>Effective Communication</li>
+            </ul>
+          </div>
+
+          <div class="section languages">
+            <h3>LANGUAGES</h3>
+            <ul>
+              <li data-language="English">
+                English
+                <span class="bubble" data-value="1"></span>
+                <span class="bubble" data-value="2"></span>
+                <span class="bubble" data-value="3"></span>
+                <span class="bubble" data-value="4"></span>
+                <span class="bubble" data-value="5"></span>
+              </li>
+              <li data-language="French">
+                French
+                <span class="bubble" data-value="1"></span>
+                <span class="bubble" data-value="2"></span>
+                <span class="bubble" data-value="3"></span>
+                <span class="bubble" data-value="4"></span>
+                <span class="bubble" data-value="5"></span>
+              </li>
+              <li data-language="German">
+                German
+                <span class="bubble" data-value="1"></span>
+                <span class="bubble" data-value="2"></span>
+                <span class="bubble" data-value="3"></span>
+                <span class="bubble" data-value="4"></span>
+                <span class="bubble" data-value="5"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="header">
+            <h1 contenteditable="true">OLIVIA WILSON</h1>
+            <h4 contenteditable="true">MARKETING MANAGER</h4>
+          </div>
+
+          <div class="sub-section">
+            <h2>PROFILE</h2>
+            <p contenteditable="true">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+
+          <div class="sub-section">
+            <h2>WORK EXPERIENCE</h2>
+
+            <div class="job" contenteditable="true">
+              <h4>Borcelle Studio</h4>
+              <small>2030 - Present | Marketing Manager & Specialist</small>
+              <ul>
+                <li>Develop and execute marketing strategies.</li>
+                <li>Lead and mentor a marketing team.</li>
+                <li>Monitor brand consistency.</li>
+              </ul>
+            </div>
+
+            <div class="job" contenteditable="true">
+              <h4>Fauget Studio</h4>
+              <small>2025 - 2029 | Marketing Manager & Specialist</small>
+              <ul>
+                <li>Create and manage marketing budgets.</li>
+                <li>Oversee market research.</li>
+                <li>Ensure brand consistency.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sub-section">
+            <h2>REFERENCE</h2>
+            <div class="references" contenteditable="true">
+              <div class="reference">
+                <p><strong>Estelle Darcy</strong><br />Wardiere Inc. / CTO</p>
+                <p><b>Phone:</b> 123-456-7890</p>
+                <p><b>Email:</b> hello@email.com</p>
+              </div>
+              <div class="reference">
+                <p><strong>Harper Russo</strong><br />Wardiere Inc. / CEO</p>
+                <p><b>Phone:</b> 123-456-7890</p>
+                <p><b>Email:</b> hello@email.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById("resume");
+        const opt = {
+          margin: 0.2,
+          filename: "My_Resume.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: { scale: 3, useCORS: true },
+          jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+          pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+        };
+        html2pdf().set(opt).from(element).save();
+      }
+
+      const profileImg = document.getElementById("profileImage");
+      const fileInput = document.getElementById("fileInput");
+
+      profileImg.addEventListener("click", () => fileInput.click());
+
+      fileInput.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            profileImg.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+      document.querySelectorAll(".section.languages li").forEach((li) => {
+        const bubbles = li.querySelectorAll(".bubble");
+
+        bubbles.forEach((bubble) => {
+          bubble.addEventListener("click", () => {
+            const value = parseInt(bubble.getAttribute("data-value"));
+
+            bubbles.forEach((b) => {
+              if (parseInt(b.getAttribute("data-value")) <= value) {
+                b.classList.add("active");
+              } else {
+                b.classList.remove("active");
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

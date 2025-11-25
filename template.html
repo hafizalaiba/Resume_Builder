@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progrescv Resume Templates</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <style>
+    .logo {
+      flex: 1;
+    }
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .nav-buttons-left {
+      margin-right: 20px;
+    }
+    #userSection {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      margin-left: 10px;
+      border: 2px solid black;
+    }
+    #userName,
+    #userEmail {
+      font-size: 13px;
+      color: #555;
+      text-transform: capitalize;
+    }
+    #userName {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .nav-item.active {
+      color: #6d2a7a;
+    }
+  </style>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="favicon/nav_logo.png"
+            alt="Progrescv Logo"
+            class="logo-img"
+          />
+        </a>
+      </div>
+      <div class="nav-links">
+        <div class="nav-item">
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class="nav-item active">
+          Templates
+          <div class="dropdown big-dropdown">
+            <div class="template-section">
+              <h3>
+                <a
+                  href="template.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  Resume Templates &gt;
+                </a>
+              </h3>
+              <div class="template-grid two-by-two">
+                <div class="template-column">
+                  <h4><a href="template.html">Professional</a></h4>
+                  <ul class="listname">
+                    <li>Modern Professional</li>
+                    <li>Executive Suite</li>
+                    <li>Corporate Classic</li>
+                  </ul>
+                </div>
+
+                <div class="template-column">
+                  <h4><a href="template.html">Creative</a></h4>
+                  <ul class="listname">
+                    <li>Creative Designer</li>
+                    <li>Artistic Flair</li>
+                    <li>Visual Storyteller</li>
+                  </ul>
+                </div>
+
+                <div class="template-column">
+                  <h4><a href="template.html">Minimal</a></h4>
+                  <ul class="listname">
+                    <li>Minimalist</li>
+                    <li>Bare Essentials</li>
+                    <li>Zen Minimal</li>
+                  </ul>
+                </div>
+
+                <div class="template-column">
+                  <h4><a href="template.html">Modern</a></h4>
+                  <ul class="listname">
+                    <li>Tech Innovator</li>
+                    <li>Digital Nomad</li>
+                    <li>Future Forward</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="cover-letter-section">
+              <h3>
+                <a
+                  href="cover_letter.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  Cover Letter Templates &gt;
+                </a>
+              </h3>
+              <ul class="listname center Coverlist">
+                <li>QA Engineer</li>
+                <li>Software Tester</li>
+                <li>SDET</li>
+                <li>DevOps QA Engineer</li>
+                <li>Performance Test Engineer</li>
+                <li>Data Engineer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          Blogs
+          <div class="dropdown">
+            <div class="dropdown-column">
+              <h3>
+                <a
+                  href="blog.html"
+                  style="text-decoration: none; color: inherit"
+                >
+                  Interview Tips &gt;
+                </a>
+              </h3>
+              <ul class="listname">
+                <li>Explaining Resume Gaps with Confidence</li>
+                <li>Mastering Body Language for Interviews</li>
+                <li>Follow-Up Etiquette After an Interview</li>
+                <li>Best Questions to Ask at the End of an Interview</li>
+                <li>Top 10 Mistakes to Avoid During an Interview</li>
+                <li>What to Do After an Interview</li>
+                <li>How to Build Confidence Before an Interview</li>
+                <li>How to Prepare for Technical Interviews</li>
+                <li>Negotiation Skills for Your Next Job Offer</li>
+                <li>10 Common Interview Questions and How to Answer Them</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-item"><a href="pricing.html">Pricing</a></div>
+        <div class="nav-item"><a href="job.html">Jobs</a></div>
+      </div>
+      <div class="nav-buttons">
+        <a href="builder1.html" class="nav-buttons-left">
+          <button class="btn btn-login">Create Resume</button>
+        </a>
+        <div
+          id="userSection"
+          style="display: none; display: flex; align-items: center; gap: 10px"
+        >
+          <div
+            class="avatar"
+            id="userAvatar"
+            onclick="triggerFileInput()"
+            style="cursor: pointer"
+          >
+            <img
+              id="profileImage"
+              src="https://cdn0.iconfinder.com/data/icons/set-ui-app-android/32/8-512.png"
+              alt="User Avatar"
+              style="width: 45px; height: 45px; border-radius: 50%"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              margin-left: 10px;
+            "
+          >
+            <div
+              id="userName"
+              style="
+                font-weight: 600;
+                color: #333;
+                font-size: 16px;
+                text-transform: capitalize;
+              "
+            ></div>
+            <span id="userEmail" style="font-size: 13px; color: #555"></span>
+          </div>
+          <div
+            id="menuDots"
+            style="cursor: pointer; margin-left: 20px"
+            onclick="toggleDropdown()"
+          >
+            <i class="fas fa-ellipsis-v" style="font-size: 18px"></i>
+          </div>
+
+          <div
+            id="dropdownMenu"
+            style="
+              display: none;
+              position: absolute;
+              top: 50px;
+              right: 0;
+              background-color: white;
+              border: 1px solid #ddd;
+              padding: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <ul>
+              <li>
+                <a
+                  href="history.html"
+                  style="color: #333; text-decoration: none"
+                  >History</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  onclick="logout()"
+                  style="color: #333; text-decoration: none"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/*"
+            onchange="previewImage(event)"
+            style="display: none"
+          />
+        </div>
+        <button
+          id="loginButton"
+          class="btn btn-login"
+          onclick="window.location.href='login.html'"
+        >
+          Login
+        </button>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="container">
+        <h2>Choose Your Perfect Resume Template</h2>
+        <p>
+          Select from our collection of modern, professional and creative
+          designs.
+        </p>
+        <a href="builder1.html">
+          <button class="btn btn-primary cta">Start Building →</button>
+        </a>
+      </div>
+    </section>
+    <section class="filters">
+      <div class="container">
+        <div class="filter-group">
+          <label>Categories:</label>
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="professional">
+            Professional
+          </button>
+          <button class="filter-btn" data-category="creative">Creative</button>
+          <button class="filter-btn" data-category="minimal">Minimal</button>
+          <button class="filter-btn" data-category="modern">Modern</button>
+        </div>
+        <div class="sort-group">
+          <label>Sort by:</label>
+          <select id="sort-select">
+            <option value="popular">Popular</option>
+            <option value="newest">Newest</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section class="templates-gallery">
+      <div class="container">
+        <div class="grid" id="templates-grid">
+          <!-- Template cards by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h3>Why Choose Progrescv Templates?</h3>
+        <div class="testimonial-cards">
+          <div class="card">
+            <p>
+              "The templates are sleek and helped me land my dream job. Highly
+              customizable!"
+            </p>
+            <cite>- Alex Johnson, Designer</cite>
+          </div>
+          <div class="card">
+            <p>
+              "Professional yet creative perfect for tech roles. Easy to use and
+              responsive."
+            </p>
+            <cite>Maria Lopez, Developer</cite>
+          </div>
+          <div class="card">
+            <p>
+              "Minimalist designs that stand out.Progrescv makes resume building
+              effortless."
+            </p>
+            <cite>Jordan Smith, Marketer</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+
+        <p>&copy; 2023 Progrescv. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const templates = [
+        {
+          id: 1,
+          name: "Modern Professional",
+          desc: "Clean and sleek for corporate roles.",
+          category: "professional",
+          img: "images/template1.png",
+        },
+        {
+          id: 2,
+          name: "Creative Designer",
+          desc: "Bold colors and layouts for creatives.",
+          category: "creative",
+          img: "images/template2.png",
+        },
+        {
+          id: 3,
+          name: "Minimalist",
+          desc: "Simple and elegant design.",
+          category: "minimal",
+          img: "images/template3.png",
+        },
+        {
+          id: 4,
+          name: "Tech Innovator",
+          desc: "Futuristic style for tech jobs.",
+          category: "modern",
+          img: "images/template4.png",
+        },
+        {
+          id: 5,
+          name: "Executive Suite",
+          desc: "Sophisticated for leadership.",
+          category: "professional",
+          img: "images/template5.png",
+        },
+        {
+          id: 6,
+          name: "Artistic Flair",
+          desc: "Vibrant and expressive.",
+          category: "creative",
+          img: "images/template6.png",
+        },
+        {
+          id: 7,
+          name: "Bare Essentials",
+          desc: "Focus on content, not design.",
+          category: "minimal",
+          img: "images/template7.png",
+        },
+        {
+          id: 8,
+          name: "Digital Nomad",
+          desc: "Flexible and modern.",
+          category: "modern",
+          img: "images/template8.png",
+        },
+        {
+          id: 9,
+          name: "Corporate Classic",
+          desc: "Timeless professional look.",
+          category: "professional",
+          img: "images/template9.png",
+        },
+        {
+          id: 10,
+          name: "Visual Storyteller",
+          desc: "Infographics and visuals.",
+          category: "creative",
+          img: "images/template10.png",
+        },
+        {
+          id: 11,
+          name: "Zen Minimal",
+          desc: "Calm and focused.",
+          category: "minimal",
+          img: "images/template11.png",
+        },
+        {
+          id: 12,
+          name: "Future Forward",
+          desc: "Cutting-edge design.",
+          category: "modern",
+          img: "images/template12.png",
+        },
+      ];
+      const grid = document.getElementById("templates-grid");
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const sortSelect = document.getElementById("sort-select");
+      function renderTemplates(filteredTemplates) {
+        grid.innerHTML = "";
+        filteredTemplates.forEach((template) => {
+          const card = document.createElement("div");
+          card.className = "template-card skeleton";
+          card.innerHTML = `
+            <img src="${template.img}" alt="${template.name}" onload="this.parentElement.classList.remove('skeleton')">
+            <div class="content">
+                <h4>${template.name}</h4>
+                <p>${template.desc}</p>
+                <button class="btn btn-primary">Use This Template</button>
+            </div>
+        `;
+          grid.appendChild(card);
+        });
+      }
+      function filterAndSort() {
+        let filtered = templates;
+        const activeCategory =
+          document.querySelector(".filter-btn.active").dataset.category;
+        if (activeCategory !== "all") {
+          filtered = templates.filter((t) => t.category === activeCategory);
+        }
+        const sortBy = sortSelect.value;
+        if (sortBy === "newest") {
+          filtered.sort((a, b) => b.id - a.id);
+        }
+        renderTemplates(filtered);
+      }
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          filterAndSort();
+        });
+      });
+      sortSelect.addEventListener("change", filterAndSort);
+      renderTemplates(templates);
+      window.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("fade-in");
+      });
+      function toggleDropdown() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        if (dropdownMenu.style.display === "block") {
+          dropdownMenu.style.display = "none";
+        } else {
+          dropdownMenu.style.display = "block";
+        }
+      }
+      function logout() {
+        sessionStorage.removeItem("userEmail");
+        sessionStorage.removeItem("userProfilePic");
+        window.location.href = "index.html";
+      }
+      window.onload = function () {
+        let userEmail = sessionStorage.getItem("userEmail");
+        let userProfilePic = sessionStorage.getItem("userProfilePic");
+        if (userEmail) {
+          document.getElementById("loginButton").style.display = "none";
+          document.getElementById("userSection").style.display = "flex";
+          document.getElementById("userEmail").textContent = userEmail;
+          let namePart = userEmail.split("@")[0].replace(/[0-9]/g, "");
+          let finalName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+          document.getElementById("userName").textContent = finalName;
+          if (userProfilePic) {
+            document.getElementById("profileImage").src = userProfilePic;
+          }
+        } else {
+          document.getElementById("loginButton").style.display = "inline-block";
+          document.getElementById("userSection").style.display = "none";
+        }
+      };
+      function triggerFileInput() {
+        document.getElementById("imageUpload").click();
+      }
+      function previewImage(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const imageUrl = e.target.result;
+            document.getElementById("profileImage").src = imageUrl;
+            sessionStorage.setItem("userProfilePic", imageUrl);
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+      function renderTemplates(filteredTemplates) {
+  grid.innerHTML = ""; 
+  filteredTemplates.forEach((template) => {
+    const card = document.createElement("div");
+    card.className = "template-card skeleton";
+
+    let templatePage = "";
+    switch (template.id) {
+      case 1:
+        templatePage = "tem1.html";
+        break;
+      case 2:
+        templatePage = "tem2.html";
+        break;
+      case 3:
+        templatePage = "tem3.html";
+        break;
+      case 4:
+        templatePage = "tem4.html";
+        break;
+      case 5:
+        templatePage = "tem5.html";
+        break;
+      case 6:
+        templatePage = "tem6.html";
+        break;
+      case 7:
+        templatePage = "tem7.html";
+        break;
+      case 8:
+        templatePage = "tem8.html";
+        break;
+      case 9:
+        templatePage = "tem9.html";
+        break;
+      case 10:
+        templatePage = "tem10.html";
+        break;
+      case 11:
+        templatePage = "tem11.html";
+        break;
+      case 12:
+        templatePage = "tem12.html";
+        break;
+      default:
+        templatePage = "template.html";
+    }
+
+    card.innerHTML = `
+      <a href="${templatePage}" class="template-link">
+        <img src="${template.img}" alt="${template.name}" onload="this.parentElement.classList.remove('skeleton')">
+        <div class="content">
+          <h4>${template.name}</h4>
+          <p>${template.desc}</p>
+          <button class="btn btn-primary">Use This Template</button>
+        </div>
+      </a>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+    </script>
+  </body>
+</html>

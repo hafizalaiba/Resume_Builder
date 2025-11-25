@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progrescv Cover Letter</title>
+        <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+<link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing:border-box;
+      }
+      body {
+        margin: 0;
+        background: #e3e8ea;
+        font-family: "Open Sans", sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+      }
+      .cover-letter {
+        width: 800px;
+        background: #fff;
+        display: flex;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      /* Left Sidebar */
+      .sidebar {
+        width: 260px;
+        background: #bcced3;
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar-top {
+        background: #304857;
+        color: #fff;
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .profile-pic {
+        width: 120px;
+        cursor: pointer;
+        height: 120px;
+        margin: 0 auto 20px auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #fff;
+      }
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sidebar-top h1 {
+        font-weight: 600;
+        font-size: 28px;
+        margin-bottom: 6px;
+      }
+      .sidebar-top p {
+        font-weight: 300;
+        font-size: 14px;
+        margin: 4px 0;
+        letter-spacing: 0.02em;
+      }
+      .sidebar-bottom {
+        padding: 30px 30px 40px 30px;
+        color: #304857;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+      }
+      .section-title {
+        font-weight: 600;
+        font-size: 13px;
+        margin-bottom: 18px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0 0 30px 0;
+      }
+      li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      li svg {
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        fill: #304857;
+      }
+      a {
+        color: #304857;
+        text-decoration: none;
+      }
+      /* Right content */
+      .main-content {
+        flex-grow: 1;
+        background: #fff;
+        padding: 60px 60px 60px 60px;
+        font-size: 14px;
+        color: #3f3f3f;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+      }
+      .main-content h1 {
+        font-weight: 600;
+        font-size: 28px;
+        margin: 0 0 8px 0;
+        color: #30a7be;
+      }
+      .main-content p.subtitle {
+        font-weight: 300;
+        font-size: 14px;
+        margin: 0 0 30px 0;
+        color: #7ca3ad;
+        border-bottom: 1px solid #30a7be;
+        padding: 25px;
+      }
+      .letter-address {
+        margin-bottom: 20px;
+        color: #3f3f3f;
+      }
+      .letter-text {
+        flex-grow: 1;
+      }
+      .signature-area {
+        margin-top: 45px;
+      }
+      .signature-name {
+        font-family: "Dancing Script", cursive;
+        font-weight: 700;
+        font-size: 28px;
+        color: #3f3f3f;
+        margin-bottom: 5px;
+      }
+      .signature-text {
+        font-weight: 300;
+        font-size: 14px;
+        color: #7ca3ad;
+      }
+      /* Line at bottom */
+      .footer-line {
+        margin-top: auto;
+        border-top: 1px solid #ddd;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+      button {
+        height: 50px;
+        background: #304857;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 30px;
+      }
+      @media (max-width: 992px) {
+        .cover-letter {
+          width: 100%;
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          flex-direction: row;
+          padding: 0;
+        }
+
+        .sidebar-top {
+          width: 40%;
+          padding: 30px 20px;
+        }
+
+        .sidebar-bottom {
+          width: 60%;
+          padding: 25px 20px;
+        }
+
+        .main-content {
+          padding: 40px 30px;
+        }
+
+        .profile-pic {
+          width: 100px;
+          
+          height: 100px;
+        }
+
+        .sidebar-bottom ul {
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px 0;
+        }
+
+        .cover-letter {
+          width: 95%;
+          flex-direction: column;
+        }
+
+        .sidebar {
+          flex-direction: column;
+          text-align: center;
+          width: 100%;
+        }
+
+        .sidebar-top {
+          width: 100%;
+          padding: 25px 20px;
+        }
+
+        .sidebar-bottom {
+          width: 100%;
+          padding: 25px 20px;
+          text-align: center;
+        }
+
+        .profile-pic {
+          width: 90px;
+          height: 90px;
+        }
+
+        .sidebar-bottom ul li {
+          justify-content: center;
+        }
+
+        .main-content {
+          padding: 30px 25px;
+        }
+
+        .main-content h1 {
+          font-size: 24px;
+        }
+
+        .main-content .subtitle {
+          font-size: 13px;
+          padding: 15px;
+        }
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div contenteditable="true" class="cover-letter" id="contentToPrint">
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <div
+            class="profile-pic"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            <img
+              id="profilePic"
+              src="https://plus.unsplash.com/premium_vector-1682304600913-78a8adade854?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8"
+              alt="Profile Picture"
+            />
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              style="display: none"
+              onchange="previewImage(event)"
+            />
+          </div>
+         
+        </div>
+        <div class="sidebar-bottom">
+          <div class="profile-section">
+            <h2 class="section-title">PROTIL HEISC</h2>
+            <ul>
+             <li style="display: flex; align-items: center; gap: 8px;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#304857">
+    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.72 11.72 0 003.7.59 1 1 0 011 1v3.5a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.7 1 1 0 01-.21 1.11l-2.26 2.26z"/>
+  </svg>
+  2009 2313
+</li>
+
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <path fill="#304857" d="M3 8l9 6 9-6V6l-9 6-9-6v2z" />
+                </svg>
+                6610770006
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="10" r="3" fill="#304857" />
+                  <path
+                    fill="#304857"
+                    d="M12 2a7 7 0 00-7 7c0 6 7 13 7 13s7-7 7-13a7 7 0 00-7-7z"
+                  />
+                </svg>
+                1844; 9336; 4000
+              </li>
+            </ul>
+          </div>
+          <div class="profile-section">
+            <h2 class="section-title">DETAILS</h2>
+            <ul>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="7" r="4" fill="#304857" />
+                  <path fill="#304857" d="M5 21v-2a8 8 0 0114 0v2" />
+                </svg>
+                Auliloly Ney Fiattal
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <rect
+                    x="3"
+                    y="6"
+                    width="18"
+                    height="12"
+                    rx="2"
+                    ry="2"
+                    fill="#304857"
+                  />
+                </svg>
+                Na@remostnate.com
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <path fill="#304857" d="M4 6h16v12H4z" />
+                </svg>
+                www.aiebauCela.com
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="8"
+                    stroke="#304857"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                  <line
+                    x1="21"
+                    y1="21"
+                    x2="16.65"
+                    y2="16.65"
+                    stroke="#304857"
+                    stroke-width="2"
+                  />
+                </svg>
+                Faiter DewrvelabMISS
+              </li>
+            </ul>
+          </div>
+          <div class="profile-section">
+            <ul>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <rect fill="#30a7be" width="24" height="24" rx="4" ry="4" />
+                </svg>
+                Paxcil @ Laetage
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <rect fill="#30a7be" width="24" height="24" rx="4" ry="4" />
+                </svg>
+                Fuied gecernoone.com
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <rect fill="#30a7be" width="24" height="24" rx="4" ry="4" />
+                </svg>
+                Prostt pracer. context
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <h1>Cover Letter</h1>
+        <p class="subtitle">
+          Your proičen the la lette<br />Coxorns@luving.com<br />for auyring
+          colr leter
+        </p>
+
+        <div class="letter-address">
+          <p>Home Listre Pasily<br />18.251.complet.com</p>
+          <p>Nowr Laetaih:</p>
+        </div>
+
+        <div class="letter-text">
+          <p>
+            The numde you papaiqed pation lette is your hany, cattiels or c
+            rilila the cusrrutnliw worting de pompes But oestenye foumiqa Istat
+            lisighlin your etter dafrenge tiner aou asgnv parjaler hen, ltre
+            tarm or eno port your usent nb-ibutes ts compyte your momunei.
+          </p>
+          <p>
+            Lon Lza ltr poillole login tant uns: clovey prouinging volter as
+            cadless yur year of tepe iaffortion. servio yeares of the
+            Demmrnovrate peoble for the printentessomm carnommdeapers, you be
+            tams hove a poratuc afleating youre miaash htliuocatont yer local
+            aite resposise ponase of teterenyan enr basce oll: 9pociers.
+          </p>
+          <p>
+            The comatius nesentem obicilus you oapr your lout bocaae wien fou
+            your veking proranly bove omeraidte usa be compor the diencorrtel
+            buassion provens you: litildsflymentay courepl demastitute the
+            derpers of boybm eranomions.
+          </p>
+          <p>
+            Loare work the nstatliement lo cor lerohod supley and ttes miroerato
+            your can color trogule fine coun scarrilye nustdenel youl pemlify
+            youning your you cove and apacitens loar aommantums. Gevenany: crf
+            rountils solling catcox-au enaceaes tule ir portimg basc on
+            aniortors transulur jute you venting gur yot mwaelome and cant
+            presemce.
+          </p>
+        </div>
+
+        <div class="signature-area">
+          <div class="signature-name">pedkunek</div>
+          <div class="signature-text">Whent you. Mercis</div>
+        </div>
+
+        <div class="footer-line"></div>
+      </main>
+    </div>
+    <button id="downloadBtn">Download PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      const btn = document.getElementById("downloadBtn");
+      const content = document.getElementById("contentToPrint");
+
+      btn.addEventListener("click", () => {
+        html2canvas(content, {
+          scale: 2,
+          useCORS: true,
+          scrollY: -window.scrollY,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelector(".profile-pic").style.overflow = "hidden";
+            clonedDoc.querySelector(".profile-pic").style.borderRadius = "50%";
+            clonedDoc.querySelector(".sidebar").style.borderImage = "none";
+          },
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [canvas.width, canvas.height],
+          });
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          pdf.save("cover-letter.pdf");
+        });
+      });
+    </script>
+  </body>
+</html>

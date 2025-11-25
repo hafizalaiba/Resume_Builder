@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progrescv Cover Letter</title>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding: 50px 20px;
+        font-family: "Inter", sans-serif;
+      }
+
+      .letter-container {
+        background: #f7f3ec;
+        width: 700px;
+        box-shadow: 0px 12px 26px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+      /* Header Section */
+      .header {
+        background: #0f495c;
+        height: 15px;
+        width: 200px;
+        margin: auto;
+      }
+
+      .top-bar {
+        display: flex;
+        padding: 25px 35px 25px 35px;
+        background: #f7f3ec;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .profile-pic {
+        width: 110px;
+        cursor: pointer;
+        height: 110px;
+        flex-shrink: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 0 7px rgb(0 0 0 / 0.1);
+      }
+
+      .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-info {
+        flex-grow: 1;
+        font-weight: 600;
+        color: #0f495c;
+      }
+
+      .profile-info h1 {
+        margin: 0 0 6px 0;
+        font-weight: 700;
+        font-size: 28px;
+      }
+
+      .profile-info p {
+        margin: 2px 0;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.2;
+        color: #63707d;
+      }
+
+      /* Contact Info */
+      .contact-info {
+        color: #63707d;
+        font-weight: 400;
+        font-size: 13px;
+        text-align: right;
+        line-height: 1.3;
+        font-family: "Inter", sans-serif;
+      }
+
+      .contact-info .name {
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .contact-info .phone,
+      .contact-info .phone span {
+        display: inline-block;
+      }
+
+      .contact-info svg {
+        vertical-align: middle;
+        margin-right: 5px;
+        fill: #63707d;
+        width: 14px;
+        height: 14px;
+      }
+
+      .divider {
+        width: 1px;
+        background: #bebebe;
+        margin: 0 20px;
+        height: 35px;
+      }
+
+      .top-bar > .contact-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* Bottom blue bar */
+      .footer-bar {
+        background: #0f495c;
+        height: 15px;
+        width: 700px;
+      }
+
+      /* Main content  */
+      .content {
+        background: white;
+        padding: 35px 55px 55px 55px;
+        font-size: 14px;
+        color: #444;
+        font-weight: 400;
+        text-align: left;
+        min-height: 400px;
+      }
+
+      .content h2 {
+        font-weight: 600;
+        font-size: 18px;
+        color: #2c3f4c;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      .content p {
+        margin: 0 0 16px 0;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+      }
+
+      .signature-section {
+        margin-top: 40px;
+        color: #444;
+      }
+
+      .signature-section strong {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .signature {
+        font-family: "Great Vibes", cursive;
+        font-size: 32px;
+        margin: 8px 0 6px 0;
+        color: #0f495c;
+      }
+
+      .signature-sub {
+        font-size: 13px;
+        font-weight: 400;
+        color: #63707d;
+      }
+
+      /* Footer website */
+      .footer-website {
+        text-align: center;
+        font-size: 12px;
+        background-color: white;
+        color: #555;
+        padding-bottom: 25px;
+        padding-top: 10px;
+        font-weight: 400;
+      }
+      button {
+        height: 50px;
+        background: #304857;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 30px;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true" class="letter-container" id="contentToPrint">
+      <div class="header"></div>
+
+      <div class="top-bar">
+        <div
+          class="profile-pic"
+          onclick="document.getElementById('fileInput').click()"
+        >
+          <img
+            id="profilePic"
+            src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            alt="Profile Picture"
+          />
+          <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            style="display: none"
+            onchange="previewImage(event)"
+          />
+        </div>
+
+        <div class="profile-info">
+          <h1>Jehine Waläi</h1>
+          <p>Dolly Hosam</p>
+          <p>InterßuldiC Rement</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="contact-info">
+          <div class="name">Sam Name</div>
+          <div class="phone">Lt: 406 378-383</div>
+          <br />
+          <div class="phone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 
+         19.79 19.79 0 0 1-8.63-3.07 
+         19.5 19.5 0 0 1-6-6 
+         19.79 19.79 0 0 1-3.07-8.67 
+         A2 2 0 0 1 4.17 2h3a2 2 0 0 1 2 1.72 
+         12.84 12.84 0 0 0 .7 2.81 
+         2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l1.32-1.32
+         a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 
+         A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            (39) 936 383
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bar"></div>
+
+      <div class="content">
+        <h2>Profile Name</h2>
+        <p>
+          Your beskc on lyer cnvr-ment abe belitt your ade rul badaninet is
+          sonnerbe balvinnes your zream bek. your up prrt fortne you
+          indrreasbity from pxramadudland comatacte of usefl. Reuer your
+          ofthectiond heus cal freem or got our conput by oridr lou oilyteme
+          ctilio demv.
+        </p>
+        <p>
+          In instrability hare tastiry urforidsty you for you feostmade
+          coroprant your Idlase our9senive pacdiset aotes tbi periourgmp your
+          refiats thiszathost our dusohillees in the smaries, and
+          ryorfijdorkynouro gintmat harfodes, your ake faveath.
+        </p>
+        <p>
+          The iln7 can be Wavv, that oefimnec iape fox you defactipharids; and
+          virakrs etanuug del storte rat v0 your ewerstarnes tancur comewatior
+          es famds of your of your fliour of lliqnts or conremain aiso pomamers.
+        </p>
+        <p>
+          Makt you wectis beef noy inner a prfentipre wed proficsand prat your
+          rifent:no craneise yver uvaich anchol your lol your your atoribyclber
+          nansy and.teer may ore your compsunuredent.
+        </p>
+        <p>
+          Your sidy your isikc Is slacd orngres, the marted shparing
+          hatingpperbriggx can nou estealied for bo your beaoe mention
+          expuivant, your neviterce dirtering of be mace bromi you tesels.
+        </p>
+
+        <div class="signature-section">
+          <div>Contact Your</div>
+          <div class="signature">Ibrame</div>
+          <div class="signature-sub">Harn.tor inspiriers.com</div>
+        </div>
+      </div>
+
+      <div class="footer-website">www.cketeckpates.com</div>
+      <div class="header"></div>
+    </div>
+    <button id="downloadBtn">Download PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      const btn = document.getElementById("downloadBtn");
+      const content = document.getElementById("contentToPrint");
+
+      btn.addEventListener("click", () => {
+        html2canvas(content, {
+          scale: 2,
+          useCORS: true,
+          scrollY: -window.scrollY,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelector(".profile-pic").style.overflow = "hidden";
+            clonedDoc.querySelector(".profile-pic").style.borderRadius = "10%";
+          },
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [canvas.width, canvas.height],
+          });
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          pdf.save("cover-letter.pdf");
+        });
+      });
+    </script>
+  </body>
+</html>

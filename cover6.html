@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progrescv Cover Letter</title>
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background-color: #f7efe7;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .cover-letter {
+        width: 800px;
+        background: white;
+        box-shadow: 0 10px 30px rgb(0 0 0 / 0.1);
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      /* Left panel */
+      .left-panel {
+        width: 270px;
+        background: #ccc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 25px 40px 25px;
+        position: relative;
+      }
+
+      .profile-pic {
+        width: 145px;
+        height: 145px;
+        background: white;
+        padding: 4px;
+        box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .profile-pic img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .name-bar {
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 0.04em;
+        padding: 10px 0;
+        margin-top: -30px;
+        margin-bottom: 25px;
+        color: #2f3e4e;
+      }
+
+      /* Contact info */
+      .contact-info {
+        width: 100%;
+        margin-top: 50px;
+        font-weight: 400;
+        color: #2f3e4e;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .contact-info p {
+        margin: 10px 0 14px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Icon container */
+      .icon {
+        display: inline-flex;
+        width: 20px;
+        height: 20px;
+        fill: #2f3e4e;
+        flex-shrink: 0;
+      }
+
+      /* Subtle bottom text */
+      .left-panel .bottom-text {
+        position: absolute;
+        bottom: 20px;
+        font-weight: 300;
+        font-size: 12px;
+        color: #c1c7ca;
+        user-select: none;
+        letter-spacing: 0.1em;
+      }
+
+      /* Right panel */
+      .right-panel {
+        flex-grow: 1;
+        background: linear-gradient(90deg, #273549 0%, #3d3a54 100%);
+        color: white;
+        padding: 40px 50px 50px 50px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .right-panel .header-small {
+        font-weight: 300;
+        font-size: 13px;
+        color: #8f9cb4;
+        letter-spacing: 0.1em;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        user-select: none;
+      }
+
+      /* Big heading */
+      .right-panel .header-large {
+        font-weight: 600;
+        font-size: 34px;
+        margin-bottom: 12px;
+        line-height: 1.1;
+      }
+
+      /* Subheading */
+      .right-panel .header-sub {
+        font-weight: 300;
+        font-size: 16px;
+        margin-bottom: 45px;
+        color: #bcc7db;
+        letter-spacing: 0.02em;
+      }
+
+      .info-icons {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+
+      .info-icon {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 300;
+        font-size: 13px;
+        color: #a3adc0;
+        user-select: none;
+        letter-spacing: 0.05em;
+      }
+
+      .info-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: #a3adc0;
+        flex-shrink: 0;
+      }
+
+      /* Letter body */
+      .letter-body {
+        background: white;
+        color: #222;
+        padding: 30px 35px;
+        margin: 0 -50px;
+        margin-bottom: -20px;
+        margin-top: -25px;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .letter-body h2 {
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #273549;
+      }
+
+      .letter-body strong {
+        color: #5594bc;
+      }
+
+      .signature {
+        margin-top: 30px;
+        font-weight: 600;
+      }
+
+      .signature a {
+        color: #5594bc;
+        text-decoration: none;
+      }
+
+      .both {
+        background-color: #d1dfe9;
+        padding: 0 50px;
+        margin-top: -30px;
+        margin-right: -25px;
+        padding-top: 20px;
+        margin-left: -25px;
+      }
+      button {
+        height: 50px;
+        background: #304857;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 30px;
+      }
+      [contenteditable="true"]:focus {
+        outline: 2px solid #4caf50;
+      }
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .cover-letter {
+          width: 100%;
+          flex-direction: column;
+        }
+
+        .left-panel {
+          width: 100%;
+          padding: 25px;
+          text-align: center;
+        }
+
+        .profile-pic {
+          width: 120px;
+          height: 120px;
+          margin: 0 auto 20px auto;
+        }
+
+        .name-bar {
+          margin-top: 5px;
+          font-size: 16px;
+        }
+
+        .contact-info p {
+          justify-content: center;
+        }
+
+        .right-panel {
+          padding: 30px 25px;
+        }
+
+        .right-panel .header-large {
+          font-size: 26px;
+        }
+
+        .header-sub {
+          font-size: 14px !important;
+        }
+
+        .info-icons {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .letter-body {
+          margin: 0;
+          padding: 20px;
+        }
+
+        button {
+          width: 100%;
+          margin: 20px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      ontenteditable="true"
+      id="contentToPrint"
+      class="cover-letter"
+      role="document"
+      aria-label="Cover letter"
+    >
+      <aside class="left-panel" aria-label="Personal Information">
+        <div class="both">
+          <div
+            class="profile-pic"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            <img
+              id="profilePic"
+              src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Profile Picture"
+            />
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              style="display: none"
+              onchange="previewImage(event)"
+            />
+          </div>
+          <div class="name-bar" aria-label="Name">Ilegtine Nane</div>
+        </div>
+
+        <nav class="contact-info" aria-label="Contact Information">
+          <p>
+            <svg class="icon" viewBox="0 0 24 24">
+              <path
+                d="M4 4h16v16H4z"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+              <path
+                d="M4 4l8 8 8-8"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+            </svg>
+            Intel@pontoiny.com
+          </p>
+
+          <p>
+            <svg class="icon" viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.44 12.44 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9 11a16 16 0 0 0 6 6l1.36-1.25a2 2 0 0 1 2.11-.45 12.44 12.44 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+            </svg>
+            35 435 3087
+          </p>
+          <p>
+            <svg class="icon" viewBox="0 0 24 24">
+              <path
+                d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+              <circle
+                cx="12"
+                cy="9"
+                r="2.5"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+            </svg>
+            7072 4201
+          </p>
+          <p>
+            <svg class="icon" viewBox="0 0 24 24">
+              <rect
+                x="3"
+                y="4"
+                width="18"
+                height="16"
+                rx="2"
+                ry="2"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+              <path d="M3 10h18" stroke="#2f3e4e" stroke-width="2" />
+            </svg>
+            77022
+          </p>
+          <p>
+            <svg class="icon" viewBox="0 0 24 24">
+              <circle
+                cx="12"
+                cy="8"
+                r="4"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+              <path
+                d="M6 20v-2a6 6 0 0 1 12 0v2"
+                fill="none"
+                stroke="#2f3e4e"
+                stroke-width="2"
+              />
+            </svg>
+            CEAV73
+          </p>
+        </nav>
+
+        <div class="bottom-text" aria-hidden="true">INOTALILI</div>
+      </aside>
+
+      <main class="right-panel" role="main" aria-label="Cover Letter Content">
+        <div class="header-small">COVERSIONAL neriga pertlon</div>
+        <h1 class="header-large" tabindex="0">LITI Udoft Cover Letter</h1>
+        <div class="header-sub">
+          Sonns; 7033-61304<br />Imnenctor Celloctair
+        </div>
+
+        <div class="info-icons" aria-label="Highlights">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke="#a3adc0"
+                stroke-width="2"
+              />
+              <path
+                d="M8 12l3 3 5-5"
+                fill="none"
+                stroke="#a3adc0"
+                stroke-width="2"
+              />
+            </svg>
+            Combicam pnta
+          </div>
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke="#a3adc0"
+                stroke-width="2"
+              />
+              <path
+                d="M8 12h8M12 8v8"
+                stroke="#a3adc0"
+                stroke-width="2"
+                fill="none"
+              />
+            </svg>
+            Start Iaqul
+          </div>
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                fill="none"
+                stroke="#a3adc0"
+                stroke-width="2"
+              />
+              <path
+                d="M12 6v6l4 2"
+                fill="none"
+                stroke="#a3adc0"
+                stroke-width="2"
+              />
+            </svg>
+            Orgcialgy Conn
+          </div>
+        </div>
+
+        <article class="letter-body" tabindex="0">
+          <h2>Cunn Day Totiel</h2>
+          <p>
+            Inrlauus incltlueand the endl yevelictho pima jes businets
+            regoluartemell staintigang mente s sprito andleving addenements on
+            autfaes the peola ont delerig amthete em cond yout art eaoproruhet
+            tos psace and yersan pel thesiglinnen, whily lhmenve what sirve
+            poned to querdibiline and erfiell ausinces, netlhe tores
+            ergnañier.es presannest opersh the mon toudret.
+          </p>
+          <p>
+            To anderumet lefat an dems and inersiod any thiespdiiation mtehcs
+            class:recernerne poandef banolngails notic stiares, faa oltarto vou
+            ar bulnes, nu counterdiver Reotte Discenunlettant usninets
+            onsgeneent ther sucong lestynet chancatte, limapiree ropratier in
+            gead ing looreng nome gewn.verboseipedemaillly. Salatilles
+            onnesssavic tedfrling engralqito, rettinal cesting proluving to anha
+            alfoura camdecobuttlealar, youtncer, thesiqned shador leste whte
+            vtat creund pleby qurecase aution and cudeupement mao fibes coffrie
+            venaksz used disciover sxportion pica outingneenao piroctutus.
+          </p>
+
+          <p>
+            You mimace nouche persstcort crenylyiaborbill; your preccee ssuer
+            ime busing Lette lone prolering cad de lper cuthets yor uyy
+            cnesalogrey and ecicily a luursinexoriden your supposs se the
+            priofte way ths were it.
+          </p>
+
+          <p class="signature">Your Nere:</p>
+          <p><strong>Refiestion </strong><a>502j4</a></p>
+        </article>
+      </main>
+    </div>
+    <button id="downloadBtn">Download PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+      function previewImage(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      const btn = document.getElementById("downloadBtn");
+      const content = document.getElementById("contentToPrint");
+
+      btn.addEventListener("click", () => {
+        html2canvas(content, {
+          scale: 2,
+          useCORS: true,
+          scrollY: -window.scrollY,
+          onclone: (clonedDoc) => {
+            clonedDoc.querySelector(".profile-pic").style.overflow = "hidden";
+            clonedDoc.querySelector(".profile-pic").style.borderRadius = "0";
+          },
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "pt",
+            format: [canvas.width, canvas.height],
+          });
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+          pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+          pdf.save("cover-letter.pdf");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+        <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <title>Progrescv Resume</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", system-ui, sans-serif;
+        margin: 0;
+        background-color: #d4d4d4;
+      }
+      .container {
+        display: flex;
+        max-width: 900px;
+        padding-bottom: 40px;
+        margin: 30px auto;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      }
+      .left-panel {
+        background-color: #575757;
+        color: white;
+        width: 300px;
+        padding: 30px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .left-panel img {
+        width: 160px;
+        height: 180px;
+        object-fit: cover;
+        margin-bottom: 30px;
+      }
+      .section-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        width: 100%;
+      }
+      .contact-info,
+      .references,
+      .expertise {
+        margin-bottom: 30px;
+        width: 100%;
+      }
+      .contact-info strong,
+      .references strong,
+      .expertise strong {
+        font-weight: 700;
+      }
+      .contact-info p,
+      .references p {
+        margin: 5px 0;
+      }
+      .expertise ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 0;
+      }
+      .right-panel {
+        flex-grow: 1;
+        padding: 40px 40px 40px 60px;
+        background: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .right-panel::before,
+      .right-panel::after {
+        content: "";
+        position: absolute;
+        background: #cdcdcd;
+        border-radius: 50%;
+        opacity: 0.4;
+        z-index: 0;
+      }
+      .right-panel::before {
+        width: 300px;
+        height: 300px;
+        top: -100px;
+        right: -120px;
+        transform: rotate(45deg);
+      }
+      .right-panel::after {
+        width: 500px;
+        height: 500px;
+        bottom: -250px;
+        left: -250px;
+      }
+
+      /* Header Name & Job */
+      .name {
+        font-size: 38px;
+        font-weight: 800;
+        color: #4a4a4a;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 0;
+      }
+      .job-title {
+        letter-spacing: 5px;
+        color: #7a7a7a;
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0 0 30px 0;
+        z-index: 1;
+        position: relative;
+      }
+
+      /* Sections */
+      .section {
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+      }
+      .section h2 {
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #434343;
+      }
+      .section p {
+        color: #4a4a4a;
+        font-size: 14px;
+        line-height: 1.5;
+        max-width: 600px;
+      }
+      .experience .job {
+        margin-bottom: 20px;
+      }
+      .experience .job-title {
+        font-weight: 700;
+        color: #3a3a3a;
+      }
+      .experience .job-duration {
+        font-weight: 700;
+        font-style: italic;
+        color: #3a3a3a;
+      }
+      .experience .job-desc {
+        font-weight: 400;
+        color: #4a4a4a;
+        font-size: 14px;
+        margin-top: 5px;
+        max-width: 600px;
+      }
+      .education .edu-item {
+        display: flex;
+        margin-bottom: 20px;
+        max-width: 650px;
+      }
+      .education .edu-year {
+        width: 100px;
+        margin-right: 40px;
+        color: #434343;
+      }
+      .education .edu-desc {
+        flex-grow: 1;
+        font-size: 14px;
+        color: #4a4a4a;
+        line-height: 1.4;
+      }
+       [contenteditable="true"]:focus {
+      outline: 2px solid #4caf50;
+    }
+  
+
+  .btn-container {
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 30px;
+      }
+
+      button {
+        background-color: #575757;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #1b1b1b;
+      }
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    max-width: 95%;
+  }
+
+  .left-panel {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right-panel {
+    padding: 30px;
+  }
+
+  .btn-container button {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .left-panel img {
+    width: 130px;
+    height: 150px;
+  }
+
+  .right-panel {
+    padding: 25px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .job-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+  .section p,
+  .job-desc,
+  .edu-desc {
+    font-size: 13px;
+  }
+
+  .education .edu-item {
+    flex-direction: column;
+  }
+
+  .education .edu-year {
+    margin-bottom: 5px;
+  }
+
+  .btn-container {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .btn-container button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-panel img {
+    width: 110px;
+    height: 130px;
+  }
+
+  .name {
+    font-size: 26px;
+  }
+
+  .right-panel {
+    padding: 20px;
+  }
+
+  .section h2 {
+    font-size: 16px;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <div contenteditable="true"id="resume" class="container">
+      <div class="left-panel">
+        <img id="profilePic"
+     src="https://images.unsplash.com/photo-1611417361507-7d77bbc20a73?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+     alt="Profile Photo"
+     style="cursor:pointer;"
+     onclick="document.getElementById('fileInput').click();" />
+        <div class="contact-info">
+          <div class="section-title">MY CONTACT</div>
+          <p><strong>Phone</strong><br />+123-456-7890</p>
+          <p><strong>Email</strong><br />hello@reallygreatsite.com</p>
+          <p><strong>Address</strong><br />123 Anywhere St., Any City</p>
+        </div>
+        <div class="expertise">
+          <div class="section-title">EXPERTISE</div>
+          <ul>
+            <li>Visual design</li>
+            <li>Illustration</li>
+            <li>Digital art</li>
+            <li>Web design</li>
+            <li>Product design</li>
+            <li>Coding</li>
+          </ul>
+        </div>
+        <div class="references">
+          <div class="section-title">REFERENCES</div>
+          <p>
+            <strong>Olivia Wilson</strong><br />Creative Director at Borcelle
+          </p>
+          <p><strong>Phone</strong><br />+123-456-7890</p>
+        </div>
+      </div>
+      <div class="right-panel">
+        <h1 class="name">CHIAKI SATO</h1>
+        <h3 class="job-title">GRAPHIC DESIGNER</h3>
+
+        <div class="section about">
+          <h2>ABOUT MYSELF</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <div class="section experience">
+          <h2>EXPERIENCE</h2>
+          <div class="job">
+            <div class="job-title">
+              Borcelle | <span class="job-duration">2013 – 2019</span>
+            </div>
+            <div>Graphic Designer</div>
+            <p class="job-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </div>
+          <div class="job">
+            <div class="job-title">
+              Ingoude Company | <span class="job-duration">2005 – 2011</span>
+            </div>
+            <div>Digital Marketing Advisor</div>
+            <p class="job-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            </p>
+          </div>
+        </div>
+
+        <div class="section education">
+          <h2>EDUCATION</h2>
+          <div class="edu-item">
+            <div class="edu-year"><strong>2006</strong><br />Borcelle</div>
+            <div class="edu-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year"><strong>2003</strong><br />Borcelle</div>
+            <div class="edu-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam,
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="changeProfileImage(event)">
+
+<div class="btn-container">
+  <button onclick="downloadPDF()">Download PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+ <script>
+    function downloadPDF() {
+      const element = document.getElementById("resume");
+
+      const opt = {
+        margin: [0, 0, 0, 0],
+        filename: "My_Resume.pdf",
+        image: { type: "jpeg", quality: 1 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          scrollY: 0,
+        },
+        jsPDF: {
+          unit: "px",
+          format: [element.offsetWidth, element.offsetHeight],
+          orientation: "portrait",
+        },
+      };
+
+      html2pdf().set(opt).from(element).save();
+    }
+    document.querySelectorAll('.bar').forEach(bar => {
+  bar.addEventListener('click', function() {
+    const fill = this.querySelector('.fill');
+    let currentWidth = parseInt(fill.style.width) || 0;
+    let newWidth = (currentWidth + 10) % 110; 
+    fill.style.width = newWidth + '%';
+  });
+});
+
+  function previewImage(event) {
+    const input = event.target;
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('profilePic').src = e.target.result;
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  function changeProfileImage(event) {
+    const input = event.target;
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profilePic').src = e.target.result; 
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+  </body>
+</html>

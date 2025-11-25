@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a New Cover Letter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #fce4ec, #e3f2fd);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      .container {
+        width: 90%;
+        max-width: 600px;
+        padding: 40px 30px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeUp 1s ease forwards;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      h2 {
+        text-align: center;
+        color: #420d2b;
+        font-size: 28px;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #6b7280;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 15px;
+        border-radius: 10px;
+        border: 1.5px solid #ddd;
+        background-color: #f9fafc;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      .form-group input:focus {
+        border-color: #420d2b;
+        box-shadow: 0 0 10px rgba(66, 13, 43, 0.2);
+        background-color: #fff;
+      }
+      .btn {
+        background: linear-gradient(135deg, #420d2b, #6d2a7a);
+        color: white;
+        padding: 14px 20px;
+        border-radius: 10px;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+      .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(109, 42, 122, 0.4);
+      }
+      @keyframes floatCard {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      @keyframes bgMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      body {
+        background-size: 200% 200%;
+        animation: bgMove 8s ease infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Create Your Cover Letter</h2>
+      <form id="coverLetterForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="job">Job Title</label>
+          <input
+            type="text"
+            id="job"
+            name="job"
+            placeholder="Enter your job title"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Enter company name"
+            required
+          />
+        </div>
+        <button type="button" class="btn" onclick="generateCoverLetter()">
+          Generate Cover Letter
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function generateCoverLetter() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const job = document.getElementById("job").value;
+        const company = document.getElementById("company").value;
+
+        if (!name || !email || !job || !company) {
+          alert("Please fill all fields before generating your cover letter!");
+          return;
+        }
+
+        const url = `generate.html?name=${encodeURIComponent(
+          name
+        )}&email=${encodeURIComponent(email)}&job=${encodeURIComponent(
+          job
+        )}&company=${encodeURIComponent(company)}`;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generated Cover Letter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f5f7fb;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      .cover-letter {
+        padding: 20px;
+        border: 2px solid #420d2b;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .cover-letter h3 {
+        color: #420d2b;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .cover-letter p {
+        color: #333;
+      }
+      .cover-letter .job-title {
+        font-weight: bold;
+        color: #6d2a7a;
+      }
+      .cover-letter .company-name {
+        font-style: italic;
+        color: #420d2b;
+      }
+      .btn {
+        color: #f5f7fb;
+        background-color: #6d2a7a;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cover-letter" id="coverLetterContent">
+        <!-- Generated cover letter content will appear here -->
+      </div>
+      <button onclick="downloadPDF()" class="btn">Download PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get("name");
+      const email = urlParams.get("email");
+      const job = urlParams.get("job");
+      const company = urlParams.get("company");
+      const coverLetterContent = `
+            <h3>Cover Letter for <span class="job-title">${job}</span></h3>
+        <p>Dear <span class="company-name">${company}</span>,</p>
+        <p>I am writing to apply for the <strong>${job}</strong> position at your company. With a strong foundation in software testing, quality assurance, and automation, I have developed a deep understanding of how to deliver high-quality software that meets both technical and user expectations.</p>
+        
+        <p>Over the past few years, I have honed my skills in manual and automated testing, focusing on end-to-end QA processes that ensure functionality, performance, and scalability. I have worked extensively with tools such as Selenium WebDriver, JIRA, Postman, TestNG, and Jenkins to create reliable test cases and execute them efficiently.</p>
+        
+        <p>My expertise also includes developing and maintaining automated testing frameworks that reduce regression time and improve coverage. I’m skilled at identifying and documenting bugs, analyzing root causes, and working closely with developers to resolve issues promptly. My focus is always on delivering stable, bug-free applications that enhance user trust and business growth.</p>
+        
+        <p>In addition to my technical skills, I take pride in my analytical mindset and attention to detail. I believe that QA is not just about finding errors, but about preventing them through smart testing strategies, clear communication, and continuous improvement. I also enjoy mentoring junior testers, reviewing peer code, and introducing process improvements to make QA cycles smoother and more efficient.</p>
+        
+        <p>Beyond testing, I value teamwork, adaptability, and continuous learning. I stay updated with modern QA practices such as Agile testing, DevOps integration, and CI/CD pipelines, ensuring that my work aligns with the latest industry standards.</p>
+        
+        <p>Thank you for considering my application. I look forward to the opportunity to further discuss how my skills can be of value to <span class="company-name">${company}</span>.</p>
+        
+        <p>Sincerely,</p>
+        <p><strong>${name}</strong><br>Email: ${email}</p>
+      `;
+      document.getElementById("coverLetterContent").innerHTML =
+        coverLetterContent;
+      function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.setFont("Poppins");
+        doc.setFontSize(18);
+        doc.setFont("Poppins", "bold");
+        doc.setTextColor(66, 13, 43);
+        doc.text(`Cover Letter for ${job}`, 20, 30);
+        doc.setFontSize(14);
+        doc.setFont("Poppins", "normal");
+        doc.setTextColor(66, 13, 43);
+        doc.text(`Dear ${company},`, 20, 45);
+        let y = 55;
+        doc.setTextColor(51, 51, 51);
+        doc.setFontSize(12);
+        const bodyText = doc.splitTextToSize(
+          `I am writing to apply for the ${job} position at your company. With a strong foundation in software testing, quality assurance, and automation, I have developed a deep understanding of how to deliver high-quality software that meets both technical and user expectations.
+
+Over the past few years, I have honed my skills in manual and automated testing, focusing on end-to-end QA processes that ensure functionality, performance, and scalability. I have worked extensively with tools such as Selenium WebDriver, JIRA, Postman, TestNG, and Jenkins to create reliable test cases and execute them efficiently.
+
+My expertise also includes developing and maintaining automated testing frameworks that reduce regression time and improve coverage. I’m skilled at identifying and documenting bugs, analyzing root causes, and working closely with developers to resolve issues promptly. My focus is always on delivering stable, bug-free applications that enhance user trust and business growth.
+
+In addition to my technical skills, I take pride in my analytical mindset and attention to detail. I believe that QA is not just about finding errors, but about preventing them through smart testing strategies, clear communication, and continuous improvement. I also enjoy mentoring junior testers, reviewing peer code, and introducing process improvements to make QA cycles smoother and more efficient.
+
+Beyond testing, I value teamwork, adaptability, and continuous learning. I stay updated with modern QA practices such as Agile testing, DevOps integration, and CI/CD pipelines, ensuring that my work aligns with the latest industry standards.`,
+          170
+        );
+        doc.text(bodyText, 20, y);
+        y += bodyText.length * 6 + 10;
+        doc.text(`Thank you for considering my application.`, 20, y);
+        y += 10;
+        doc.text(`Sincerely,`, 20, y);
+        y += 10;
+        doc.setFont("Poppins", "bold");
+        doc.text(`${name}`, 20, y);
+        y += 10;
+        doc.setFont("Poppins", "normal");
+        doc.text(`Email: ${email}`, 20, y);
+        const pageWidth = doc.internal.pageSize.width;
+        const pageHeight = doc.internal.pageSize.height;
+        const borderMargin = 10;
+        doc.setDrawColor(66, 13, 43);
+        doc.setLineWidth(1.2);
+        doc.rect(
+          borderMargin,
+          borderMargin,
+          pageWidth - 2 * borderMargin,
+          pageHeight - 2 * borderMargin
+        );
+        doc.save("cover_letter.pdf");
+      }
+    </script>
+  </body>
+</html>
