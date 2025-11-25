@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>ProgresCV  Admin CPanel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+        <link rel="shortcut icon" href="favicon/logo.png" type="image/x-icon" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="app" id="app">
+      <nav class="sidebar card">
+        <div class="logo">
+          <a href="#">
+            <img id="navLogo" src="favicon/nav_logo.png" alt="Progrescv Logo" class="logo-img" />
+          </a>
+        </div>
+        <div class="menu">
+          <a href="#" data-section="dashboard"><i class="fa-solid fa-house"></i> Dashboard</a>
+          <a href="#" data-section="users"><i class="fa-solid fa-users"></i> Users</a>
+          <a href="#" data-section="templates"><i class="fa-regular fa-file"></i> Templates</a>
+          <a href="#" data-section="payments"><i class="fa-solid fa-money-bill"></i> Payments</a>
+          <a href="#" data-section="feedback"><i class="fa-solid fa-envelope"></i> Feedback</a>
+          <a href="#" data-section="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+        </div>
+      </nav>
+
+      <main class="content">
+        <header class="topbar">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <button class="btn btn-ghost" id="toggleSidebar"><i class="fa-solid fa-bars"></i></button>
+            <input id="search" placeholder="Search users, templates..." style="padding: 8px;border-radius: 8px;border: 1px solid rgba(0, 0, 0, 0.06);" />
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px">
+            <button class="btn" id="darkToggle"><i class="fa-regular fa-moon"></i></button>
+            <div style="display: flex; align-items: center; gap: 8px">
+              <img id="adminAvatar" src="https://i.pravatar.cc/40" style="border-radius: 50%" />
+              <div style="text-align: right">
+                <div style="font-weight: 600" id="adminName">Admin</div>
+                <div class="small" id="adminEmail">admin@progrescv.test</div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="section" style="margin-top: 18px">
+          <div class="grid">
+            <div class="col-3 card">
+              <h3>Totals</h3>
+              <div class="stats" style="margin-top: 8px">
+                <div class="stat card">
+                  <div class="small">Total Users</div>
+                  <div id="totalUsers" style="font-size: 20px; font-weight: 700">0</div>
+                </div>
+                <div class="stat card">
+                  <div class="small">Total Resumes</div>
+                  <div id="totalResumes" style="font-size: 20px; font-weight: 700">0</div>
+                </div>
+              </div>
+              <div style="margin-top: 12px" class="small">Most used template: <strong id="mostUsed">-</strong></div>
+              <div style="margin-top: 12px" class="small">Total Payments: <strong id="totalPayments">0</strong></div>
+            </div>
+
+            <div class="col-9 card">
+              <h3>Usage Chart</h3>
+              <canvas id="usageChart" height="120"></canvas>
+            </div>
+
+            <div class="col-4 card">
+              <h3>Recent Activities</h3>
+              <ul id="recentList" style="padding-left: 14px; margin: 8px 0"></ul>
+            </div>
+
+            <div class="col-8 card">
+              <h3>Quick Actions</h3>
+              <div style="display: flex; gap: 8px; margin-top: 8px">
+                <button class="btn btn-primary" id="openAddTemplate">Add Template</button>
+                <button class="btn btn-primary" id="openAddUser">Add User</button>
+                <button class="btn btn-primary" id="openAddPayment">Add Payment</button>
+                <button class="btn btn-ghost" id="refreshData">Refresh Data</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- USERS -->
+        <section id="users" class="section" style="display: none; margin-top: 18px">
+          <div class="card">
+            <h3>Users</h3>
+            <div style="margin-bottom:10px" class="flex">
+              <div class="small muted">Manage all registered users</div>
+              <button class="btn btn-primary right" id="addUserTop">+ New User</button>
+            </div>
+            <table id="usersTable">
+              <thead>
+                <tr><th>Name</th><th>Email</th><th>Created Resumes</th><th>Actions</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- TEMPLATES -->
+        <section id="templates" class="section" style="display: none; margin-top: 18px">
+          <div class="card">
+            <h3>Templates</h3>
+            <div class="templates-grid" id="templatesGrid" style="margin-top: 10px"></div>
+          </div>
+        </section>
+
+        <!-- PAYMENTS -->
+        <section id="payments" class="section" style="display: none; margin-top: 18px">
+          <div class="card">
+            <h3>Payments</h3>
+            <div style="margin:10px 0" class="flex">
+              <div class="small muted">Track payments and status</div>
+              <div class="right">
+                <button class="btn btn-primary" id="addPaymentTop">+ Add Payment</button>
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table id="paymentsTable">
+                <thead>
+                  <tr><th>User</th><th>Amount</th><th>Date</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- FEEDBACK -->
+        <section id="feedback" class="section" style="display: none; margin-top: 18px">
+          <div class="card">
+            <h3>Feedback / Messages</h3>
+            <table id="feedbackTable">
+              <thead>
+                <tr><th>Name</th><th>Email</th><th>Message</th><th>Actions</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section id="settings" class="section" style="display: none; margin-top: 18px">
+          <div class="card">
+            <h3>Admin Settings</h3>
+            <div style="margin-top: 8px">
+              <label class="small">Site Title</label>
+              <input id="siteTitle" style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" />
+              <label class="small" style="margin-top:8px;display:block">Site Tagline</label>
+              <input id="siteTagline" style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" />
+              <label class="small" style="margin-top:8px;display:block">Logo URL</label>
+              <input id="siteLogo" style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)" />
+              <label class="small" style="margin-top:8px;display:block">Primary Accent Color</label>
+              <input id="siteAccent" type="color" value="#6d2a7a" style="width:80px;height:40px;margin-top:6px;border-radius:6px;border:0"/>
+              <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+                <label class="small">Dark Mode</label>
+                <input type="checkbox" id="settingsDark" />
+              </div>
+              <div style="margin-top:12px">
+                <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+                <button class="btn btn-ghost" id="resetDemo">Reset Demo Data</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="modal" style="position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(2, 6, 23, 0.5);">
+      <div class="card" style="width: 760px; max-width: 95%; padding: 18px">
+        <div id="modalContent"></div>
+        <div style="text-align: right; margin-top: 12px">
+          <button class="btn btn-ghost" id="modalClose">Close</button>
+        </div>
+      </div>
+    </div>
+<script src="js/script.js"></script>
+  </body>
+</html>
